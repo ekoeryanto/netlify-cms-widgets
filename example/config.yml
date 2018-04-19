@@ -1,0 +1,21 @@
+backend:
+  name: test-repo
+
+display_url: https://example.com
+media_folder: "assets/uploads"
+
+publish_mode: editorial_workflow # optional, enables publishing workflow
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "settings"
+    label: "Settings"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: "example"
+        label: "Example Widget"
+        file: "_data/example.json"
+        description: "Color Widget Example"
+        fields:
+          - {label: "Color Widget", name: "color", widget: "netlify-cms-widget-color"}
