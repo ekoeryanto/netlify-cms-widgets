@@ -1,6 +1,6 @@
 # netlify-cms-widget-color
 
-Simple Netlify CMS color widget using [react-color](https://github.com/casesandberg/react-color)
+This project is a simple color widget for Netlify CMS that uses [react-color](https://github.com/casesandberg/react-color). Remembering all the world's code values for colors is hard. Now you don't have to. Install the color widget so you can make an easy job of things like changing your some font color, directly in the editor UI. 
 
 ## Install and Usage
 
