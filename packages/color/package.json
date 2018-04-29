@@ -8,7 +8,7 @@
     "build": "webpack --mode=production",
     "dev": "webpack --mode=development",
     "watch": "webpack -w src --mode=development",
-    "prepublish": "cross-env NODE_ENV=production npm run build"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "netlify",
