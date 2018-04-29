@@ -11,7 +11,7 @@ npm install --save netlify-cms-widget-color
 ```
 
 ```js
-import { ColorControl } from 'netlify-cms-widget-color'
+import ColorControl from 'netlify-cms-widget-color'
 
 CMS.registerWidget('color', ColorControl)
 ```
@@ -23,10 +23,12 @@ Add to your config.yml:
 
 ### Via `script` tag:
 ```html
-<script src="https://unpkg.com/netlify-cms"></script>
+<script src="https://unpkg.com/netlify-cms-extended"></script>
 <script src="https://unpkg.com/netlify-cms-widget-color"></script>
+<script>
+  CMS.registerWidget('color', NetlifyCMSColorWidget)
+</script>
 ```
-Note: it is already registered with name `netlify-cms-widget-color` so you can just use that on your `config.yml`
 
 ## Configuration Options
 

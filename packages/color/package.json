@@ -1,0 +1,57 @@
+{
+  "name": "netlify-cms-widget-color",
+  "version": "1.0.0",
+  "description": "Circular Color widget for Netlify CMS.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development",
+    "watch": "webpack -w src --mode=development",
+    "prepublish": "cross-env NODE_ENV=production npm run build"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-cms",
+    "cms",
+    "widget"
+  ],
+  "author": "Eko Eryanto <ekoeryanto@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ekoeryanto/netlify-cms-widget/issues"
+  },
+  "homepage": "https://github.com/ekoeryanto/netlify-cms-widget/tree/master/packages/circular-color#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekoeryanto/netlify-cms-widget.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.11",
+    "netlify-cms-extended": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "peerDependencies": {
+    "create-react-class": "^15.6.0",
+    "immutable": "^3.8.0",
+    "netlify-cms-extended": "^1.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.3.0",
+    "react-immutable-proptypes": "^2.1.0"
+  },
+  "dependencies": {
+    "react-circular-color": "^1.2.1",
+    "react-color": "^2.14.1"
+  }
+}
