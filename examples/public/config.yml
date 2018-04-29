@@ -16,3 +16,4 @@ collections:
         fields:
           - {label: "Color Widget", name: "color", widget: "color"}
           - {label: "Native Color Widget", name: "native-color", widget: "native-color"}
+          - {label: "Material Icons Widget", name: "material-icons", widget: "material-icons"}

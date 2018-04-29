@@ -1,0 +1,52 @@
+{
+  "name": "netlify-cms-widget-material-icons",
+  "version": "0.0.0",
+  "description": "Google Material Design Icons widget for Netlify CMS.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "watch": "webpack -w src --mode=development",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-cms",
+    "cms",
+    "widget"
+  ],
+  "author": "Eko Eryanto <ekoeryanto@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ekoeryanto/netlify-cms-widget/issues"
+  },
+  "homepage": "https://github.com/ekoeryanto/netlify-cms-widget/tree/master/packages/material-icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekoeryanto/netlify-cms-widget.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "netlify-cms-extended": "^1.0.0",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "peerDependencies": {
+    "create-react-class": "^15.6.0",
+    "immutable": "^3.8.0",
+    "netlify-cms-extended": "^1.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.3.0",
+    "react-immutable-proptypes": "^2.1.0"
+  },
+  "dependencies": {
+    "react-select": "^1.2.1"
+  }
+}
