@@ -1,2 +1,2 @@
 # netlify-cms-widget-native-color
-{{ titleCase name}} widget for Netlify CMS.
+Native Color widget for Netlify CMS.
