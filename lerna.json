@@ -9,7 +9,7 @@
   "commands": {
     "publish": {
       "ignore": [
-        "examples/**"
+        "examples"
       ]
     }
   }
