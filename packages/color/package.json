@@ -4,7 +4,6 @@
   "description": "Circular Color widget for Netlify CMS.",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "webpack --mode=production",
     "dev": "webpack --mode=development",
     "watch": "webpack -w src --mode=development",
@@ -35,7 +34,6 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
     "netlify-cms-extended": "^1.0.0",
-    "rimraf": "^2.6.2",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.3",
     "webpack": "^4.6.0",
