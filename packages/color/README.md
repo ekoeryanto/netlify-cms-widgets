@@ -26,7 +26,7 @@ Add to your config.yml:
 <script src="https://unpkg.com/netlify-cms-extended"></script>
 <script src="https://unpkg.com/netlify-cms-widget-color"></script>
 <script>
-  CMS.registerWidget('color', NetlifyCMSColorWidget)
+  CMS.registerWidget('color', NetlifyCMSColorWidget.default)
 </script>
 ```
 
