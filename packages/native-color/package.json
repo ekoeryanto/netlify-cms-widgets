@@ -9,7 +9,10 @@
     "prepublish": "npm run build"
   },
   "keywords": [
-    "netlify", "netlify-cms", "cms", "widget"
+    "netlify",
+    "netlify-cms",
+    "cms",
+    "widget"
   ],
   "author": "Eko Eryanto <ekoeryanto@gmail.com>",
   "bugs": {
