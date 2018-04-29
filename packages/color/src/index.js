@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import ImmutablePropTypes from 'react-immutable-proptypes'
-import { SketchPicker } from 'react-color'
+import SketchPicker from 'react-color/lib/Sketch'
 
 const DEFAULT_FORMAT = 'hex'
 const DEFAULT_COLOR = '#ffffff'
@@ -20,6 +20,10 @@ export default class ColorControl extends React.Component {
     classNameWrapper: PropTypes.string.isRequired,
     setActiveStyle: PropTypes.func.isRequired,
     setInactiveStyle: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    value: '#000000'
   }
 
   format = this.props.field.get('format') || DEFAULT_FORMAT
@@ -50,14 +54,18 @@ export default class ColorControl extends React.Component {
     }
 
     return (
-      <SketchPicker
+      <div
         id={forID}
         className={classNameWrapper}
-        onChangeComplete={this.handleChangeComplete}
         onFocus={setActiveStyle}
         onBlur={setInactiveStyle}
-        {...props}
-      />
+        style={{borderColor: value}}
+      >
+        <SketchPicker
+          onChangeComplete={this.handleChangeComplete}
+          {...props}
+        />
+      </div>
     )
   }
 }
