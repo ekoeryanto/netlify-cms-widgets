@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-native-color",
-  "version": "0.1.1-alpha.0",
+  "version": "0.1.1-alpha.1",
   "description": "Native Color widget for Netlify CMS.",
   "main": "dist/common/main.min.js",
   "browser": "dist/main.min.js",
