@@ -24,6 +24,10 @@
     "type": "git",
     "url": "https://github.com/ekoeryanto/netlify-cms-widget.git"
   },
+  "files": [
+    "src/**",
+    "dist/**"
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-loader": "^7.1.4",
