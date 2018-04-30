@@ -2,9 +2,10 @@
   "name": "netlify-cms-widget-native-color",
   "version": "0.1.0",
   "description": "Native Color widget for Netlify CMS.",
-  "main": "dist/index.js",
+  "main": "dist/common/main.min.js",
+  "browser": "dist/main.min.js",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack && webpack --mode=production",
     "watch": "webpack -w src --mode=development",
     "prepublish": "npm run build"
   },
