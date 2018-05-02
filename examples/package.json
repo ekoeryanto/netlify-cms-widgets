@@ -4,9 +4,11 @@
   "description": "Examples widget for Netlify CMS.",
   "main": "dist/main.js",
   "scripts": {
-    "start": "parcel serve module.html -o index.html",
-    "browse": "parcel serve browser.html -o index.html",
-    "watch": "parcel watch module.html -o index.html",
+    "start": "parcel serve module.html -o index",
+    "browse": "parcel serve browser.html -o index",
+    "build:module": "parcel build module.html -o index",
+    "build:browser": "parcel build browser.html -o index",
+    "watch": "parcel watch module.html -o index",
     "prepublish": "npm run build"
   },
   "keywords": [

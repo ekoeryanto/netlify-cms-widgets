@@ -15,7 +15,8 @@
       "fields": [
         { "name": "color", "label": "Color Widget", "widget": "color", "format": "hsl", "presets": ["red", "green", "blue"], "default": "pink", "alpha": false },
         { "name": "native-color", "label": "Native Color Widget", "widget": "native-color" },
-        { "name": "material-icons", "label": "Material Icons Widget", "widget": "material-icons" }
+        { "name": "material-icons", "label": "Material Icons Widget", "widget": "material-icons" },
+        { "name": "fontawesome", "label": "Fontawesome Widget", "widget": "fontawesome" }
       ]
     }]
   }]
