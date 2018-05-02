@@ -13,6 +13,12 @@ module.exports = function (plop) {
         name: `author`,
         message: `Author of the package`,
         default: 'Eko Eryanto <ekoeryanto@gmail.com>'
+      },
+      {
+        type: `confirm`,
+        name: `multiple`,
+        message: `multiple module (yes, if it needs widget preview)?`,
+        default: true
       }
     ],
     actions: (data) =>
@@ -26,6 +32,16 @@ module.exports = function (plop) {
           type: `add`,
           path: `packages/{{kebabCase name}}/src/index.js`,
           templateFile: `plop-templates/package/index.js.hbs`
+        },
+        {
+          type: `add`,
+          path: `packages/{{kebabCase name}}/src/{{pascalCase name}}Control.js`,
+          templateFile: `plop-templates/package/control.js.hbs`
+        },
+        data.multiple && {
+          type: `add`,
+          path: `packages/{{kebabCase name}}/src/{{pascalCase name}}Preview.js`,
+          templateFile: `plop-templates/package/preview.js.hbs`
         },
         {
           type: `add`,
@@ -46,11 +62,6 @@ module.exports = function (plop) {
           type: `add`,
           path: `packages/{{kebabCase name}}/.gitignore`,
           templateFile: `plop-templates/package/.gitignore.hbs`
-        },
-        {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/.npmignore`,
-          templateFile: `plop-templates/package/.npmignore.hbs`
         }
       ].filter(Boolean)
   })

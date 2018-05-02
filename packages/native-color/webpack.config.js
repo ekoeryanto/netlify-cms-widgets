@@ -1,27 +1,30 @@
-const targets = {
-  umd: 'umd',
-  commonjs2: 'common',
-  var: ''
+const targetDir = {
+  var: '.',
+  umd: 'umd/v1',
+  umd2: 'umd',
+  commonjs: 'cjs/v1',
+  commonjs2: 'cjs'
 }
 
 module.exports = (env, args) => {
+  const lib = args.libraryTarget || 'var'
   const prod = args.mode === 'production'
 
-  return Object.keys(targets).map(t => ({
-    mode: prod ? 'production' : 'development',
-    devtool: 'source-map',
+  return {
+    devtool: prod ? 'source-map' : 'eval-source-map',
     externals: {
-      ...cmx('netlify-cms-extended', 'CMS', t),
-      ...cmx('react-immutable-proptypes', ['CMS', 'ImmutablePropTypes'], t),
-      ...cmx('prop-types', ['CMS', 'PropTypes'], t),
-      ...cmx('immutable', ['CMS', 'Immutable'], t),
-      ...cmx('react', ['CMS', 'React'], t)
+      ...cmx('netlify-cms-extended', 'CMS', lib),
+      ...cmx('react-immutable-proptypes', ['CMS', 'ImmutablePropTypes'], lib),
+      ...cmx('prop-types', ['CMS', 'PropTypes'], lib),
+      ...cmx('immutable', ['CMS', 'Immutable'], lib),
+      ...cmx('react', ['CMS', 'React'], lib)
     },
     output: {
       library: 'NetlifyCMSNativeColorWidget',
-      libraryTarget: t,
-      filename: `${targets[t] || '.'}/[name]${prod ? '.min.js' : '.js'}`,
-      umdNamedDefine: true
+      libraryExport: 'default',
+      libraryTarget: lib,
+      filename: `${targetDir[lib] || lib || '.'}/[name].js`,
+      umdNamedDefine: lib === 'umd' || undefined
     },
     module: {
       rules: [
@@ -40,22 +43,24 @@ module.exports = (env, args) => {
         }
       ]
     }
-  }))
+  }
 }
 
 function cmx (name, root, target) {
   const stringRoot = `${Array.isArray(root) ? root.join('.') : root}`
   switch (target) {
     case 'umd':
+    case 'umd2':
       return {
         [name]: {
           root,
           commonjs: name,
-          commonjs2: name
+          commonjs2: name,
+          amd: name
         }
       }
-    case 'commonjs2':
     case 'commonjs':
+    case 'commonjs2':
       return {[name]: name}
     case 'window':
       return {[name]: {window: root}}

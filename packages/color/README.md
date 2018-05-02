@@ -7,13 +7,13 @@ This project is a simple color widget for Netlify CMS that uses [react-color](ht
 ### As an npm package:
 
 ```shell
-npm install --save netlify-cms-widget-color
+npm install netlify-cms-widget-color
 ```
 
 ```js
-import ColorControl from 'netlify-cms-widget-color'
-
-CMS.registerWidget('color', ColorControl)
+import CMS from 'netlify-cms'
+import ColorWidget from 'netlify-cms-widget-color'
+CMS.registerWidget('color', ColorWidget)
 ```
 Add to your config.yml:
 ```yaml
@@ -22,32 +22,11 @@ Add to your config.yml:
 ```
 
 ### Via `script` tag:
+Note: we use `netlify-cms-extended` here, see: netlify/netlify-cms#1292
 ```html
 <script src="https://unpkg.com/netlify-cms-extended"></script>
 <script src="https://unpkg.com/netlify-cms-widget-color"></script>
 <script>
-  CMS.registerWidget('color', NetlifyCMSColorWidget.default)
+  CMS.registerWidget(color, NetlifyCMSColorWidget)
 </script>
 ```
-
-## Configuration Options
-
-Option   | Type    | Default   | Description 
----------|---------|-----------|-------------
-alpha    | bool    | true      | enable alpha      
-presets  | array   | undefined | Define presets color
-default  | string  | #ffffff   | Default color
-
-Example:
-```yml
-- label: "Theme Color"
-  name: "color"
-  widget: "color"
-  format: 'hsl'
-  presets: ['red', 'green', 'blue'], default: 'pink'
-  alpha: false
-```
-
-## Support
-
-For help with this widget, open an [issue](https://github.com/ekoeryanto/netlify-cms-widget-color) or ask the Netlify CMS community in [Gitter](https://gitter.im/netlify/netlifycms).

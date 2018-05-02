@@ -2,7 +2,7 @@
  "private": true,
  "scripts": {
    "boot": "lerna bootstrap",
-   "start": "yarn --cwd examples run start"
+   "start": "yarn workspace examples run start"
  },
  "devDependencies": {
   "babel-eslint": "^8.2.3",
@@ -25,6 +25,9 @@
   "packages": [
    "packages/*",
    "examples"
+  ],
+  "nohoist": [
+    "parcel-bundler"
   ]
  },
  "eslintIgnore": [
