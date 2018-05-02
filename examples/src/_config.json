@@ -1,0 +1,23 @@
+{
+  "config": {
+  "backend": {
+    "name": "test-repo",
+    "login": false
+  },
+  "media_folder": "assets",
+  "collections": [{
+    "name": "example",
+    "label": "Example",
+    "files": [{
+      "file": "_data/examples.yml",
+      "name": "example-widget",
+      "label": "Example Widget",
+      "fields": [
+        { "name": "color", "label": "Color Widget", "widget": "color", "format": "hsl", "presets": ["red", "green", "blue"], "default": "pink", "alpha": false },
+        { "name": "native-color", "label": "Native Color Widget", "widget": "native-color" },
+        { "name": "material-icons", "label": "Material Icons Widget", "widget": "material-icons" }
+      ]
+    }]
+  }]
+}
+}

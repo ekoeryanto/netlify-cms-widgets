@@ -4,9 +4,9 @@
   "description": "Examples widget for Netlify CMS.",
   "main": "dist/main.js",
   "scripts": {
-    "start": "webpack-dev-server --mode=development --content-base public --watch-content-base --watch",
-    "build": "webpack --mode=production",
-    "watch": "webpack -w src --mode=development",
+    "start": "parcel serve module.html -o index.html",
+    "browse": "parcel serve browser.html -o index.html",
+    "watch": "parcel watch module.html -o index.html",
     "prepublish": "npm run build"
   },
   "keywords": [
@@ -15,38 +15,20 @@
     "cms",
     "widget"
   ],
-  "author": "Eko Eryanto &lt;ekoeryanto@gmail.com&gt;",
+  "author": "Eko Eryanto <ekoeryanto@gmail.com>",
   "bugs": {
-    "url": "https://github.com/ekoeryanto/netlify-cms-widget/issues"
+    "url": "https://github.com/ekoeryanto/netlify-cms-widgets/issues"
   },
-  "homepage": "https://github.com/ekoeryanto/netlify-cms-widget/tree/master/packages/examples#readme",
+  "homepage": "https://github.com/ekoeryanto/netlify-cms-widgets/tree/master/packages/examples#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ekoeryanto/netlify-cms-widget.git"
+    "url": "https://github.com/ekoeryanto/netlify-cms-widgets.git"
   },
   "private": true,
-  "devDependencies": {
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-export-extensions": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "html-webpack-plugin": "^3.2.0",
-    "netlify-cms-extended": "^1.0.0",
-    "source-map-loader": "^0.2.3",
-    "style-loader": "^0.20.3",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.14",
-    "webpack-dev-server": "^3.1.3"
+  "dependencies": {
+    "netlify-cms": "^1.0.0"
   },
-  "peerDependencies": {
-    "create-react-class": "^15.6.0",
-    "immutable": "^3.8.0",
-    "netlify-cms-extended": "^1.0.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.3.0",
-    "react-immutable-proptypes": "^2.1.0"
+  "devDependencies": {
+    "parcel-bundler": "^1.7.1"
   }
 }
