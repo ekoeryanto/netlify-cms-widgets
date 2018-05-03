@@ -10,7 +10,7 @@ module.exports = (env, args) => {
   const lib = args.libraryTarget || 'var'
   const prod = args.mode === 'production'
 
-  return {
+  const main = () => ({
     devtool: prod ? 'source-map' : 'eval-source-map',
     externals: {
       ...cmx('netlify-cms-extended', 'CMS', lib),
@@ -23,7 +23,7 @@ module.exports = (env, args) => {
       ...cmx('react-dom', ['CMS', 'ReactDOM'], lib),
     },
     output: {
-      library: 'NetlifyCMSFontawesomeWidget',
+      library: ['NetlifyCMSWidgetFontawesome'],
       libraryTarget: lib,
       filename: `${targetDir[lib] || lib || '.'}/[name].js`,
       umdNamedDefine: lib === 'umd' || undefined,
@@ -45,7 +45,17 @@ module.exports = (env, args) => {
         },
       ],
     },
+  })
+
+  const single = main()
+  single.entry = {
+    Brands: './src/Brands',
+    Regular: './src/Regular',
+    Solid: './src/Solid',
   }
+  single.output.library.push('[name]')
+
+  return [main(), single]
 }
 
 function cmx (name, root, target) {
