@@ -21,7 +21,7 @@ export default class FontawesomeControl extends React.Component {
 
   render () {
     const { forID, field, value, setActiveStyle, setInactiveStyle, onChange, classNameWrapper } = this.props
-    const currentValue = field.get('default', value)
+    const currentValue = value || field.get('default')
     return (
       <input
         id={forID}
