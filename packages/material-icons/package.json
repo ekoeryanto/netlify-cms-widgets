@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-material-icons",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Material Icons widget for Netlify CMS.",
   "main": "dist/cjs/main.js",
   "module": "dist/esm/index.js",

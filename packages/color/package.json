@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-color",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Color widget for Netlify CMS.",
   "main": "dist/cjs/main.js",
   "module": "dist/esm/index.js",
