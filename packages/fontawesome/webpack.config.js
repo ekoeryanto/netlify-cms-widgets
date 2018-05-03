@@ -13,12 +13,14 @@ module.exports = (env, args) => {
   return {
     devtool: prod ? 'source-map' : 'eval-source-map',
     externals: {
-      ...cmx('create-react-class', 'createClass', lib),
       ...cmx('netlify-cms-extended', 'CMS', lib),
       ...cmx('react-immutable-proptypes', ['CMS', 'ImmutablePropTypes'], lib),
       ...cmx('prop-types', ['CMS', 'PropTypes'], lib),
       ...cmx('immutable', ['CMS', 'Immutable'], lib),
       ...cmx('react', ['CMS', 'React'], lib),
+      ...cmx('create-react-class', ['CMS', 'createReactClass'], lib),
+      ...cmx('classnames', ['CMS', 'classNames'], lib),
+      ...cmx('react-dom', ['CMS', 'ReactDOM'], lib),
     },
     output: {
       library: 'NetlifyCMSFontawesomeWidget',
