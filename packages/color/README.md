@@ -27,6 +27,6 @@ Note: we use `netlify-cms-extended` here, see: netlify/netlify-cms#1292
 <script src="https://unpkg.com/netlify-cms-extended"></script>
 <script src="https://unpkg.com/netlify-cms-widget-color"></script>
 <script>
-  CMS.registerWidget(color, NetlifyCMSColorWidget)
+  CMS.registerWidget(color, NetlifyCMSWidgetColor)
 </script>
 ```

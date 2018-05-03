@@ -26,6 +26,6 @@ Note: we use `netlify-cms-extended` here, see: netlify/netlify-cms#1292
 <script src="https://unpkg.com/netlify-cms-extended"></script>
 <script src="https://unpkg.com/netlify-cms-widget-native-color"></script>
 <script>
-  CMS.registerWidget(native-color, NetlifyCMSNativeColorWidget)
+  CMS.registerWidget(native-color, NetlifyCMSWidgetNativeColor)
 </script>
 ```

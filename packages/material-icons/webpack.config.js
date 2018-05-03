@@ -20,7 +20,7 @@ module.exports = (env, args) => {
       ...cmx('react', ['CMS', 'React'], lib),
     },
     output: {
-      library: 'NetlifyCMSMaterialIconsWidget',
+      library: 'NetlifyCMSWidgetMaterialIcons',
       libraryTarget: lib,
       filename: `${targetDir[lib] || lib || '.'}/[name].js`,
       umdNamedDefine: lib === 'umd' || undefined,

@@ -45,8 +45,8 @@ Note: we use `netlify-cms-extended` here, see: netlify/netlify-cms#1292
 <script>
   CMS.registerWidget(
     material-icons,
-    NetlifyCMSMaterialIconsWidget.Control,
-    NetlifyCMSMaterialIconsWidget.Preview
+    NetlifyCMSWidgetMaterialIcons.Control,
+    NetlifyCMSWidgetMaterialIcons.Preview
   )
 </script>
 ```

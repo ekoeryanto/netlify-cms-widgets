@@ -28,17 +28,17 @@ Add to your config.yml:
 ### Via `script` tag:
 Note: we use `netlify-cms-extended` here, see: netlify/netlify-cms#1292
 ```html
-<script src="https://unpkg.com/netlify-cms-extended"></script>
+<script src="https://unpkg.com/netlify-cms-extended/dist/extended.js"></script>
 <script src="https://unpkg.com/netlify-cms-widget-{{name}}"></script>
 <script>
   {{#if multiple}}
   CMS.registerWidget(
-    {{name}},
-    NetlifyCMS{{pascalCase name}}Widget.Control,
-    NetlifyCMS{{pascalCase name}}Widget.Preview
+    '{{name}}',
+    NetlifyCMSWidget{{pascalCase name}}.Control,
+    NetlifyCMSWidget{{pascalCase name}}.Preview
   )
   {{else}}
-  CMS.registerWidget({{name}}, NetlifyCMS{{pascalCase name}}Widget)
+  CMS.registerWidget('{{name}}', NetlifyCMSWidget{{pascalCase name}})
   {{/if}}
 </script>
 ```

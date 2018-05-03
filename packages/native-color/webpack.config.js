@@ -20,7 +20,7 @@ module.exports = (env, args) => {
       ...cmx('react', ['CMS', 'React'], lib),
     },
     output: {
-      library: 'NetlifyCMSNativeColorWidget',
+      library: 'NetlifyCMSWidgetNativeColor',
       libraryExport: 'default',
       libraryTarget: lib,
       filename: `${targetDir[lib] || lib || '.'}/[name].js`,

@@ -20,7 +20,7 @@ module.exports = (env, args) => {
       ...cmx('react', ['CMS', 'React'], lib)
     },
     output: {
-      library: 'NetlifyCMS{{pascalCase name}}Widget',{{#unless multiple}}
+      library: 'NetlifyCMSWidget{{pascalCase name}}',{{#unless multiple}}
       libraryExport: 'default',{{/unless}}
       libraryTarget: lib,
       filename: `${targetDir[lib] || lib || '.'}/[name].js`,
