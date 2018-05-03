@@ -1,6 +1,7 @@
 {
   "lerna": "2.11.0",
   "packages": [
+    "examples",
     "packages/*"
   ],
   "version": "independent",
@@ -8,9 +9,19 @@
   "useWorkspaces": true,
   "commands": {
     "publish": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "message": "chore(release): publish %s",
       "ignore": [
         "examples"
       ]
     }
-  }
+  },
+  "ignoreChanges": [
+    "**/examples/**",
+    "**/*.md",
+    "**/*.yml",
+    "**/*.yaml",
+    "**/*.html"
+  ]
 }
