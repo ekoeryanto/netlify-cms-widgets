@@ -2,7 +2,9 @@
  "private": true,
  "scripts": {
   "boot": "lerna bootstrap",
-  "start": "yarn workspace examples run start"
+  "start": "yarn workspace examples run start",
+  "lint": "eslint --ignore-path .gitignore --fix",
+  "precommit": "lint-staged"
  },
  "devDependencies": {
   "babel-eslint": "^8.2.3",
@@ -15,13 +17,17 @@
   "eslint-plugin-promise": "^3.7.0",
   "eslint-plugin-react": "^7.7.0",
   "eslint-plugin-standard": "^3.1.0",
+  "husky": "^0.14.3",
   "lerna": "^2.11.0",
+  "lint-staged": "^7.0.5",
   "plop": "^2.0.0"
  },
- "npmClient": "yarn",
- "npmClientArgs": [
-  "--no-lockfile"
- ],
+ "lint-staged": {
+  "*.js": [
+    "npm run lint",
+    "git add"
+  ]
+ },
  "workspaces": {
   "packages": [
    "packages/*",
@@ -32,6 +38,8 @@
   ]
  },
  "eslintIgnore": [
-  "dist"
+  "dist",
+  "node_modules",
+  ".cache"
  ]
 }
