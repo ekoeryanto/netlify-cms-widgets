@@ -2752,6 +2752,10 @@ eslint-config-standard-react@^6.0.0:
   dependencies:
     eslint-config-standard-jsx "^5.0.0"
 
+eslint-config-standard-trailing-commas@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-trailing-commas/-/eslint-config-standard-trailing-commas-6.1.0.tgz#a9945aa0826008c96499476b079bc0d76d282309"
+
 eslint-config-standard@^11.0.0:
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-11.0.0.tgz#87ee0d3c9d95382dc761958cbb23da9eea31e0ba"

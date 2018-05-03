@@ -13,17 +13,17 @@ export default class ColorControl extends React.Component {
       format: PropTypes.oneOf(['hex', 'rgb', 'hsl']),
       default: PropTypes.string,
       presets: ImmutablePropTypes.list,
-      alpha: PropTypes.bool
+      alpha: PropTypes.bool,
     }),
     forID: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     classNameWrapper: PropTypes.string.isRequired,
     setActiveStyle: PropTypes.func.isRequired,
-    setInactiveStyle: PropTypes.func.isRequired
+    setInactiveStyle: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
-    value: ''
+    value: '',
   }
 
   format = this.props.field.get('format') || DEFAULT_FORMAT
@@ -46,7 +46,7 @@ export default class ColorControl extends React.Component {
     const props = {
       presetColors: undefined,
       color: value || field.get('default') || DEFAULT_COLOR,
-      disableAlpha: !field.get('alpha', true)
+      disableAlpha: !field.get('alpha', true),
     }
 
     if (field.has('presets')) {

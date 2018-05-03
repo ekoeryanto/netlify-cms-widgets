@@ -18,20 +18,20 @@ export const Control = createClass({
     return {
       selected,
       style,
-      styles
+      styles,
     }
   },
   getStyle: {
     solid: import('@fortawesome/fontawesome-free-solid'),
     brands: import('@fortawesome/fontawesome-free-brands'),
-    regular: import('@fortawesome/fontawesome-free-regular')
+    regular: import('@fortawesome/fontawesome-free-regular'),
   },
   setOptions (style) {
     this.getStyle[style].then(({ default: icons }) => {
       fontawesome.library.add(icons)
       const options = Object.keys(icons).map(i => ({
         prefix: icons[i].prefix,
-        name: icons[i].iconName
+        name: icons[i].iconName,
       }))
       this.setState({ options })
     })
@@ -76,7 +76,7 @@ export const Control = createClass({
         optionRenderer: this.renderOption,
         onChange: this.handleChange,
         value: this.state.selected,
-        valueRenderer: this.renderValue
+        valueRenderer: this.renderValue,
       }),
       React.createElement(
         'div',
@@ -89,21 +89,21 @@ export const Control = createClass({
               checked: this.state.style === t,
               onChange: this.styleChange,
               type: 'radio',
-              value: t
+              value: t,
             }),
             t
           )
         )
       )
     )
-  }
+  },
 })
 
 export const Preview = createClass({
   render () {
     return React.createElement(FontAwesomeIcon, {
       icon: Object.values(this.props.value),
-      size: 'lg'
+      size: 'lg',
     })
-  }
+  },
 })

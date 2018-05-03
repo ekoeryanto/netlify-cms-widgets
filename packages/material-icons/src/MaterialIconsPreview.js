@@ -3,7 +3,7 @@ import React from 'react'
 
 export default class MaterialIconsPreview extends React.Component {
   static propTypes = {
-    value: PropTypes.node
+    value: PropTypes.node,
   }
 
   render () {

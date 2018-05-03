@@ -13,12 +13,12 @@ export default class MaterialIconsControl extends React.Component {
     setInactiveStyle: PropTypes.func.isRequired,
     classNameWrapper: PropTypes.string.isRequired,
     field: ImmutablePropTypes.mapContains({
-      default: PropTypes.string
-    })
+      default: PropTypes.string,
+    }),
   }
 
   static defaultProps = {
-    value: ''
+    value: '',
   }
 
   state = {}
@@ -45,7 +45,7 @@ export default class MaterialIconsControl extends React.Component {
 
         callback(null, {
           options: input.length > 0 ? options.slice(0, 50) : options,
-          complete: input.length > 0 ? options.length <= 50 : true
+          complete: input.length > 0 ? options.length <= 50 : true,
         })
       })
   }

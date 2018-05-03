@@ -11,12 +11,12 @@ export default class FontawesomeControl extends React.Component {
     setInactiveStyle: PropTypes.func.isRequired,
     classNameWrapper: PropTypes.string.isRequired,
     field: ImmutablePropTypes.mapContains({
-      default: PropTypes.string
-    })
+      default: PropTypes.string,
+    }),
   }
 
   static defaultProps = {
-    value: ''
+    value: '',
   }
 
   render () {

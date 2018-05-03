@@ -3,7 +3,7 @@ const targetDir = {
   umd: 'umd/v1',
   umd2: 'umd',
   commonjs: 'cjs/v1',
-  commonjs2: 'cjs'
+  commonjs2: 'cjs',
 }
 
 module.exports = (env, args) => {
@@ -17,31 +17,31 @@ module.exports = (env, args) => {
       ...cmx('react-immutable-proptypes', ['CMS', 'ImmutablePropTypes'], lib),
       ...cmx('prop-types', ['CMS', 'PropTypes'], lib),
       ...cmx('immutable', ['CMS', 'Immutable'], lib),
-      ...cmx('react', ['CMS', 'React'], lib)
+      ...cmx('react', ['CMS', 'React'], lib),
     },
     output: {
       library: 'NetlifyCMSMaterialIconsWidget',
       libraryTarget: lib,
       filename: `${targetDir[lib] || lib || '.'}/[name].js`,
-      umdNamedDefine: lib === 'umd' || undefined
+      umdNamedDefine: lib === 'umd' || undefined,
     },
     module: {
       rules: [
         {
           test: /\.js$/,
           loader: 'source-map-loader',
-          enforce: 'pre'
+          enforce: 'pre',
         },
         {
           test: /\.jsx?$/,
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         },
         {
           test: /\.css$/,
-          loader: ['style-loader', 'css-loader']
-        }
-      ]
-    }
+          loader: ['style-loader', 'css-loader'],
+        },
+      ],
+    },
   }
 }
 
@@ -55,8 +55,8 @@ function cmx (name, root, target) {
           root,
           commonjs: name,
           commonjs2: name,
-          amd: name
-        }
+          amd: name,
+        },
       }
     case 'commonjs':
     case 'commonjs2':

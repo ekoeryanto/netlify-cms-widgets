@@ -1,14 +1,15 @@
 {
  "private": true,
  "scripts": {
-   "boot": "lerna bootstrap",
-   "start": "yarn workspace examples run start"
+  "boot": "lerna bootstrap",
+  "start": "yarn workspace examples run start"
  },
  "devDependencies": {
   "babel-eslint": "^8.2.3",
   "eslint": "^4.19.1",
   "eslint-config-standard": "^11.0.0",
   "eslint-config-standard-react": "^6.0.0",
+  "eslint-config-standard-trailing-commas": "^6.1.0",
   "eslint-plugin-import": "^2.11.0",
   "eslint-plugin-node": "^6.0.1",
   "eslint-plugin-promise": "^3.7.0",
@@ -27,7 +28,7 @@
    "examples"
   ],
   "nohoist": [
-    "parcel-bundler"
+   "parcel-bundler"
   ]
  },
  "eslintIgnore": [
