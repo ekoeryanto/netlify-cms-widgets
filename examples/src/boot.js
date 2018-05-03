@@ -5,7 +5,7 @@ window.repoFiles = {
     'examples.yml': {
       'material-icons': 'texture',
       'color': 'red',
-      'native-color': '#FFF000'
-    }
-  }
+      'native-color': '#FFF000',
+    },
+  },
 }
