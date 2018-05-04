@@ -59,6 +59,6 @@
     "react-immutable-proptypes": "^2.1.0"
   },
   "dependencies": {
-    "react-select": "^1.2.1"
+    "react-virtualized-select": "^3.1.3"
   }
 }
