@@ -14,4 +14,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### BREAKING CHANGES
 
-* **refactor:** NetlifyCMS*Widget now NetlifyCMS*
+* **refactor:** `NetlifyCMSNameWidget` now `NetlifyCMSWidgetName`
