@@ -4,11 +4,11 @@
   "description": "Examples widget for Netlify CMS.",
   "main": "dist/main.js",
   "scripts": {
-    "start": "parcel serve module.html -o index",
-    "browse": "parcel serve browser.html -o index",
-    "build:module": "parcel build module.html -o index",
-    "build:browser": "parcel build browser.html -o index",
-    "watch": "parcel watch module.html -o index",
+    "start": "parcel serve module.html -o index --public-url /",
+    "browse": "parcel serve browser.html -o index --public-url /",
+    "build:module": "parcel build module.html -o index --public-url /",
+    "build:browser": "parcel build browser.html -o index --public-url /",
+    "watch": "parcel watch module.html -o index --public-url /",
     "prepublish": "npm run build"
   },
   "keywords": [
@@ -28,7 +28,11 @@
   },
   "private": true,
   "dependencies": {
-    "netlify-cms": "^1.0.0"
+    "netlify-cms": "^1.0.0",
+    "netlify-cms-widget-color": "latest",
+    "netlify-cms-widget-native-color": "latest",
+    "netlify-cms-widget-material-icons": "latest",
+    "netlify-cms-widget-fontawesome": "latest"
   },
   "devDependencies": {
     "parcel-bundler": "^1.7.1"

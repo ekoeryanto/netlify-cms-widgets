@@ -8,9 +8,14 @@ import * as NetlifyCMSWidgetMaterialIcons from 'netlify-cms-widget-material-icon
 import * as NetlifyCMSWidgetFontawesome from 'netlify-cms-widget-fontawesome'
 
 CMS.registerWidget('color', NetlifyCMSWidgetColor)
+
 CMS.registerWidget('native-color', NetlifyCMSWidgetNativeColor)
+
 CMS.registerWidget('material-icons', NetlifyCMSWidgetMaterialIcons.Control, NetlifyCMSWidgetMaterialIcons.Preview)
-CMS.registerWidget('fontawesome', NetlifyCMSWidgetFontawesome.Control, NetlifyCMSWidgetFontawesome.Preview)
 CMS.registerPreviewStyle('https://fonts.googleapis.com/css?family=Material+Icons')
+
+CMS.registerWidget('fontawesome-solid', NetlifyCMSWidgetFontawesome.Solid, NetlifyCMSWidgetFontawesome.Preview)
+CMS.registerWidget('fontawesome-regular', NetlifyCMSWidgetFontawesome.Regular, NetlifyCMSWidgetFontawesome.Preview)
+CMS.registerWidget('fontawesome-brands', NetlifyCMSWidgetFontawesome.Brands, NetlifyCMSWidgetFontawesome.Preview)
 
 init({ config })

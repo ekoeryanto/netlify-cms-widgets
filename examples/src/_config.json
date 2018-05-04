@@ -8,17 +8,42 @@
   "collections": [{
     "name": "example",
     "label": "Example",
-    "files": [{
-      "file": "_data/examples.yml",
-      "name": "example-widget",
-      "label": "Example Widget",
-      "fields": [
-        { "name": "color", "label": "Color Widget", "widget": "color", "format": "hsl", "presets": ["red", "green", "blue"], "default": "pink", "alpha": false },
-        { "name": "native-color", "label": "Native Color Widget", "widget": "native-color" },
-        { "name": "material-icons", "label": "Material Icons Widget", "widget": "material-icons" },
-        { "name": "fontawesome", "label": "Fontawesome Widget", "widget": "fontawesome" }
-      ]
-    }]
+    "files": [
+      {
+        "file": "_data/color.yml",
+        "name": "color-widget",
+        "label": "Color",
+        "fields": [
+          { "name": "color", "label": "Color Widget", "widget": "color", "format": "hsl", "presets": ["red", "green", "blue"], "default": "pink", "alpha": false }
+        ]
+      },
+      {
+        "file": "_data/native-color.yml",
+        "name": "native-color-widget",
+        "label": "Native Color",
+        "fields": [
+          { "name": "native-color", "label": "Native Color Widget", "widget": "native-color" }
+        ]
+      },
+      {
+        "file": "_data/material-icons.yml",
+        "name": "material-icons-widget",
+        "label": "Material Icons",
+        "fields": [
+          { "name": "material-icons", "label": "Material Icons Widget", "widget": "material-icons" }
+        ]
+      },
+      {
+        "file": "_data/fontawesome.yml",
+        "name": "fontawesome-widget",
+        "label": "Fontawesome",
+        "fields": [
+          { "name": "fontawesome-solid", "label": "Fontawesome Solid Widget", "widget": "fontawesome-solid" },
+          { "name": "fontawesome-brands", "label": "Fontawesome Brands Widget", "widget": "fontawesome-brands" },
+          { "name": "fontawesome-regular", "label": "Fontawesome Regular Widget", "widget": "fontawesome-regular" }
+        ]
+      }
+    ]
   }]
 }
 }
