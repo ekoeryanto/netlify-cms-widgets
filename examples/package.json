@@ -8,8 +8,7 @@
     "browse": "parcel serve browser.html -o index --public-url /",
     "build:module": "parcel build module.html -o index --public-url /",
     "build:browser": "parcel build browser.html -o index --public-url /",
-    "watch": "parcel watch module.html -o index --public-url /",
-    "prepublish": "npm run build"
+    "watch": "parcel watch module.html -o index --public-url /"
   },
   "keywords": [
     "netlify",
@@ -30,11 +29,18 @@
   "dependencies": {
     "netlify-cms": "^1.0.0",
     "netlify-cms-widget-color": "latest",
-    "netlify-cms-widget-native-color": "latest",
+    "netlify-cms-widget-fontawesome": "latest",
     "netlify-cms-widget-material-icons": "latest",
-    "netlify-cms-widget-fontawesome": "latest"
+    "netlify-cms-widget-native-color": "latest"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.7.1"
+    "create-react-class": "^15.6.3",
+    "immutable": "^3.8.2",
+    "parcel-bundler": "^1.7.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-immutable-proptypes": "^2.1.0",
+    "slate": "^0.33.5"
   }
 }
