@@ -15,6 +15,9 @@ Add to your `index.html`
 ```
 
 ```js
+import 'react-select/dist/react-select.css'
+import 'react-virtualized/styles.css'
+import 'react-virtualized-select/styles.css'
 import CMS from 'netlify-cms'
 import * as MaterialIconsWidget from 'netlify-cms-widget-material-icons'
 
@@ -40,6 +43,9 @@ fields:
 ### Via `script` tag:
 Note: we use `netlify-cms-extended` here, see: netlify/netlify-cms#1292
 ```html
+<link href="https://unpkg.com/react-select/dist/react-select.css" rel="stylesheet">
+<link href="https://unpkg.com/react-virtualized/styles.css" rel="stylesheet">
+<link href="https://unpkg.com/react-virtualized-select/styles.css" rel="stylesheet">
 <script src="https://unpkg.com/netlify-cms-extended"></script>
 <script src="https://unpkg.com/netlify-cms-widget-material-icons"></script>
 <script>

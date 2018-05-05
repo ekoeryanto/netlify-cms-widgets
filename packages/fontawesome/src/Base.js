@@ -4,9 +4,6 @@ import PropTypes from 'prop-types'
 import VirtualizedSelect from 'react-virtualized-select'
 import fontawesome from '@fortawesome/fontawesome'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import 'react-select/dist/react-select.css'
-import 'react-virtualized/styles.css'
-import 'react-virtualized-select/styles.css'
 
 export function withIcon (icons) {
   fontawesome.library.add(icons)

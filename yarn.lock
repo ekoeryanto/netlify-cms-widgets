@@ -6179,6 +6179,10 @@ netlify-cms-widget-native-color@latest:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/netlify-cms-widget-native-color/-/netlify-cms-widget-native-color-1.0.0.tgz#7c7289be4dae3d7a8c2ef4536177605926819bef"
 
+netlify-cms-widget-shims@latest:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-shims/-/netlify-cms-widget-shims-0.1.1.tgz#b0f64ae1f223a094003473d969c8c382a1526236"
+
 netlify-cms@^1.0.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/netlify-cms/-/netlify-cms-1.7.0.tgz#7fdb2b50f14b9c08092f59e27a660aeb4aaabe11"

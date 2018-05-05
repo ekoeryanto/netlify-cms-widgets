@@ -3,10 +3,6 @@ import ImmutablePropTypes from 'react-immutable-proptypes'
 import PropTypes from 'prop-types'
 import VirtualizedSelect from 'react-virtualized-select'
 
-import 'react-select/dist/react-select.css'
-import 'react-virtualized/styles.css'
-import 'react-virtualized-select/styles.css'
-
 export class Control extends React.Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
