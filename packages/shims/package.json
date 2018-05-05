@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-shims",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shims for Netlify CMS Extended that assign window.CMS.`lib` to global window.",
   "main": "dist/index.js",
   "files": [
