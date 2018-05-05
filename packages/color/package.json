@@ -14,8 +14,8 @@
     "build": "npm-run-all --parallel build:*",
     "build:esm": "babel src -d dist/esm",
     "build:browser": "webpack --display errors-only --mode=production",
-    "build:umd": "webpack --display errors-only --mode=production --library-target umd2",
-    "build:common": "webpack --display errors-only --mode=production --library-target commonjs2",
+    "build:umd": "webpack --display errors-only --mode=production --output-library-target umd2",
+    "build:common": "webpack --display errors-only --mode=production --output-library-target commonjs2",
     "watch": "webpack -w src --mode=development",
     "prepublishOnly": "npm-run-all clean build"
   },

@@ -7,7 +7,7 @@ const targetDir = {
 }
 
 module.exports = (env, args) => {
-  const lib = args.libraryTarget || 'var'
+  const lib = args.outputLibraryTarget || 'var'
   const prod = args.mode === 'production'
 
   return {
