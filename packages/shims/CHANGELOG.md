@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-shims@0.0.2...netlify-cms-widget-shims@0.1.0) (2018-05-05)
+
+
+### Features
+
+* **shims:** babel minify no webpack ([fc36225](https://github.com/ekoeryanto/netlify-cms-widgets/commit/fc36225))
+
+
+
+
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-shims@0.0.1...netlify-cms-widget-shims@0.0.2) (2018-05-05)
 
