@@ -16,7 +16,6 @@ module.exports = (env, args) => {
       ...cmx('netlify-cms-extended', 'CMS', lib),
       ...cmx('react', ['CMS', 'React'], lib),
       ...cmx('react-dom', ['CMS', 'ReactDOM'], lib),
-      ...cmx('react-dom', ['CMS', 'ReactDOM'], lib),
       ...cmx('prop-types', ['CMS', 'PropTypes'], lib),
       ...cmx('immutable', ['CMS', 'Immutable'], lib),
       ...cmx('react-immutable-proptypes', ['CMS', 'ImmutablePropTypes'], lib),
