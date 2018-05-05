@@ -9,7 +9,7 @@ if (typeof window !== 'undefined' && typeof window.CMS !== 'undefined') {
     createReactClass,
   } = window.CMS
 
-  Object.assign(window.CMS, {
+  Object.assign(window, {
     React,
     ReactDOM,
     PropTypes,
