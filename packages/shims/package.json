@@ -1,0 +1,44 @@
+{
+  "name": "netlify-cms-widget-shims",
+  "version": "0.0.0",
+  "description": "Shims for Netlify CMS Extended that assign window.CMS.`lib` to global window.",
+  "main": "dist/main.js",
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:browser": "webpack --display errors-only --mode=production",
+    "watch": "webpack -w src --mode=development",
+    "prepublishOnly": "npm-run-all clean build"
+  },
+  "keywords": [
+    "netlify", "netlify-cms", "cms", "widget", "shims"
+  ],
+  "author": "Eko Eryanto <ekoeryanto@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ekoeryanto/netlify-cms-widgets/issues"
+  },
+  "homepage": "https://github.com/ekoeryanto/netlify-cms-widgets/tree/master/packages/shims#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekoeryanto/netlify-cms-widgets.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
