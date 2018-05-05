@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-fontawesome",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Fontawesome widget for Netlify CMS.",
   "main": "dist/cjs/main.js",
   "module": "dist/esm/index.js",
