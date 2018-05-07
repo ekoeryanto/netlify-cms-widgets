@@ -12,13 +12,11 @@ const commonPrompts = [
   }
 ]
 
-const addFile = (type, path, base, template) => {
-  template = template || path
-  base = base || type
-
+const addFile = (type, path, template) => {
+  template = (template || path).replace(/\.hbs$/, '')
   return {
     type: 'add',
-    path: `${base}/{{kebabCase name}}/${path}`,
+    path: `${type}/{{kebabCase name}}/${path}`,
     templateFile: `plop-templates/${type}/${template}.hbs`
   }
 }
@@ -29,52 +27,16 @@ module.exports = function (plop) {
     prompts: commonPrompts,
     actions: data =>
       [
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/package.json',
-          templateFile: 'plop-templates/widget/package.json.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/src/index.js',
-          templateFile: 'plop-templates/widget/index.js.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/src/Control.js',
-          templateFile: 'plop-templates/widget/control.js.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/src/Preview.js',
-          templateFile: 'plop-templates/widget/preview.js.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/README.md',
-          templateFile: 'plop-templates/widget/README.md.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/.babelrc',
-          templateFile: 'plop-templates/widget/.babelrc.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/rollup.config.js',
-          templateFile: 'plop-templates/widget/rollup.config.js.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/public/index.html',
-          templateFile: 'plop-templates/widget/index.html.hbs'
-        },
-        {
-          type: 'add',
-          path: 'widgets/{{kebabCase name}}/public/config.yml',
-          templateFile: 'plop-templates/widget/config.yml.hbs'
-        }
-      ].filter(Boolean)
+        addFile('widgets', 'package.json'),
+        addFile('widgets', '/src/index.js', 'index.js'),
+        addFile('widgets', 'src/Control.js', 'control.js'),
+        addFile('widgets', 'src/Preview.js', 'preview.js'),
+        addFile('widgets', 'README.md'),
+        addFile('widgets', '.babelrc'),
+        addFile('widgets', 'rollup.config.js'),
+        addFile('widgets', 'public/index.html', 'index.html'),
+        addFile('widgets', 'public/config.yml', 'config.yml')
+      ]
   })
 
   plop.setGenerator('core', {
@@ -82,7 +44,7 @@ module.exports = function (plop) {
     prompts: commonPrompts,
     actions: data => [
       addFile('core', '.babelrc'),
-      addFile('core', 'src/index.js', null, 'index.js'),
+      addFile('core', 'src/index.js', 'index.js'),
       addFile('core', 'package.json'),
       addFile('core', 'README.md'),
       addFile('core', 'rollup.config.js')
