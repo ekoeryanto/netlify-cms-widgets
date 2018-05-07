@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-shims",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Shims for Netlify CMS.",
   "main": "dist/index.js",
   "files": [
