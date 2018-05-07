@@ -10,7 +10,7 @@
   "commands": {
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": false
+      "conventionalCommits": true
     }
   },
   "ignoreChanges": [
