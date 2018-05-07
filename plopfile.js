@@ -1,19 +1,32 @@
+const commonPrompts = [
+  {
+    type: 'input',
+    name: 'name',
+    message: 'Widget name'
+  },
+  {
+    type: 'input',
+    name: 'author',
+    message: 'Widget author',
+    default: 'Eko Eryanto <ekoeryanto@gmail.com>'
+  }
+]
+
+const addFile = (type, path, base, template) => {
+  template = template || path
+  base = base || type
+
+  return {
+    type: 'add',
+    path: `${base}/{{kebabCase name}}/${path}`,
+    templateFile: `plop-templates/${type}/${template}.hbs`
+  }
+}
+
 module.exports = function (plop) {
   plop.setGenerator('widget', {
     description: 'Generate basic files for new widget',
-    prompts: [
-      {
-        type: 'input',
-        name: 'name',
-        message: 'Widget name'
-      },
-      {
-        type: 'input',
-        name: 'author',
-        message: 'Widget author',
-        default: 'Eko Eryanto <ekoeryanto@gmail.com>'
-      }
-    ],
+    prompts: commonPrompts,
     actions: data =>
       [
         {
@@ -62,5 +75,17 @@ module.exports = function (plop) {
           templateFile: 'plop-templates/widget/config.yml.hbs'
         }
       ].filter(Boolean)
+  })
+
+  plop.setGenerator('core', {
+    description: 'Generate basic files for new widget',
+    prompts: commonPrompts,
+    actions: data => [
+      addFile('core', '.babelrc'),
+      addFile('core', 'src/index.js', null, 'index.js'),
+      addFile('core', 'package.json'),
+      addFile('core', 'README.md'),
+      addFile('core', 'rollup.config.js')
+    ]
   })
 }
