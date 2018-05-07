@@ -13,7 +13,7 @@ npm install netlify-cms-widget-color @pake/react-color
 ```js
 import CMS from "netlify-cms";
 import * as ColorWidget from "netlify-cms-widget-color";
-CMS.registerWidget("color", ColorWidget.Control, ColorWidget.Preview);
+CMS.registerWidget("color", ColorWidget.Control);
 ```
 
 Add to your config.yml:
