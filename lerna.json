@@ -1,8 +1,8 @@
 {
   "lerna": "2.11.0",
   "packages": [
-    "core/*",
-    "widgets/*"
+    "widgets/*",
+    "core/*"
   ],
   "version": "independent",
   "npmClient": "yarn",
@@ -10,7 +10,7 @@
   "commands": {
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": true
+      "conventionalCommits": false
     }
   },
   "ignoreChanges": [
