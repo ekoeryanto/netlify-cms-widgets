@@ -1,0 +1,15 @@
+backend:
+  name: test-repo
+  login: false
+media_folder: assets
+collections:
+- name: example
+  label: Example
+  files:
+  - file: _data/material-icons.yml
+    name: material-icons-widget
+    label: Material Icons Widget
+    fields:
+    - name: material-icons
+      label: Material Icons
+      widget: material-icons

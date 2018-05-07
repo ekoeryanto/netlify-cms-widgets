@@ -1,0 +1,33 @@
+# netlify-cms-widget-{{kebabCase name}}
+
+{{ titleCase name}} widget for Netlify CMS.
+
+## Install and Usage
+
+### As an npm package:
+
+```shell
+npm install netlify-cms-widget-{{name}}
+```
+
+```js
+import CMS from 'netlify-cms'
+import * as {{pascalCase name}}Widget from 'netlify-cms-widget-{{name}}'
+CMS.registerWidget('{{name}}', {{pascalCase name}}Widget.Control, {{pascalCase name}}Widget.Preview)
+```
+
+Add to your config.yml:
+
+```yaml
+    fields:
+      - name: <fieldname>
+        label: <fieldlabel>
+        widget: {{name}}
+```
+
+## Example
+
+see `public` directory and note that we are using `netlify-cms-extended` there.
+
+See [here](https://github.com/netlify/netlify-cms/pull/1292)
+for more info.

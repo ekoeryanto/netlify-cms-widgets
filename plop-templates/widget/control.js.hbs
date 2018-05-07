@@ -1,0 +1,45 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import ImmutablePropTypes from 'react-immutable-proptypes'
+
+export class Control extends React.Component {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    forID: PropTypes.string.isRequired,
+    value: PropTypes.node,
+    setActiveStyle: PropTypes.func.isRequired,
+    setInactiveStyle: PropTypes.func.isRequired,
+    classNameWrapper: PropTypes.string.isRequired,
+    field: ImmutablePropTypes.mapContains({
+      default: PropTypes.string
+    }).isRequired
+  }
+
+  static defaultProps = {
+    value: ''
+  }
+
+  render () {
+    const {
+      forID,
+      field,
+      value,
+      setActiveStyle,
+      setInactiveStyle,
+      onChange,
+      classNameWrapper
+    } = this.props
+    const currentValue = value || field.get('default')
+    return (
+      <input
+        id={forID}
+        className={classNameWrapper}
+        type='text'
+        value={currentValue}
+        onBlur={setInactiveStyle}
+        onFocus={setActiveStyle}
+        onChange={e => onChange(e.target.value)}
+      />
+    )
+  }
+}

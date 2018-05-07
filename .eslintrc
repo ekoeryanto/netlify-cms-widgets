@@ -1,4 +1,4 @@
 {
   "parser": "babel-eslint",
-  "extends": ["standard-trailing-commas", "standard-react"]
+  "extends": ["standard", "standard-react"]
 }

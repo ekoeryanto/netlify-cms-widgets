@@ -1,0 +1,17 @@
+backend:
+  name: test-repo
+  login: false
+media_folder: assets
+collections:
+- name: example
+  label: Example
+  editor:
+    preview: false
+  files:
+  - file: _data/native-color.yml
+    name: native-color-widget
+    label: Native Color Widget
+    fields:
+    - name: native-color
+      label: Native Color
+      widget: native-color

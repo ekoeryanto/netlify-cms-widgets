@@ -30,8 +30,8 @@
  },
  "workspaces": {
   "packages": [
-   "packages/*",
-   "examples"
+   "widgets/*",
+   "core/*"
   ],
   "nohoist": [
    "parcel-bundler"

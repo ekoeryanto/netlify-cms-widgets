@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Fontawesome Example | Netlify CMS Widgets</title>
+  <link rel="stylesheet" href="netlify-cms-extended/dist/cms.css">
+
+  <link rel="stylesheet" href="react-select/dist/react-select.css">
+  <link rel="stylesheet" href="react-virtualized/styles.css">
+  <link rel="stylesheet" href="react-virtualized-select/styles.css">
+</head>
+
+<body>
+  <script src="netlify-cms-extended/dist/extended.js"></script>
+  <script src="shims/dist/index.js"></script>
+  <script src="react-virtualized-select/dist/umd/react-virtualized-select.js"></script>
+  <script src="@fortawesome/fontawesome-free-solid/index.js"></script>
+  <script src="@fortawesome/fontawesome-free-brands/index.js"></script>
+  <script src="@fortawesome/fontawesome/index.js"></script>
+  <script src="@fortawesome/react-fontawesome/index.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/combine/npm/@fortawesome/fontawesome,npm/@fortawesome/react-fontawesome,npm/@fortawesome/fontawesome-free-solid,npm/@fortawesome/fontawesome-free-regular,npm/@fortawesome/fontawesome-free-brands"></script> -->
+
+  <script src="umd/fontawesome.js"></script>
+
+  <script>
+    CMS.registerWidget('fontawesome-solid', NetlifyCMSWidgetFontawesome.Solid, NetlifyCMSWidgetFontawesome.Preview)
+    CMS.registerWidget('fontawesome-regular', NetlifyCMSWidgetFontawesome.Regular, NetlifyCMSWidgetFontawesome.Preview)
+    CMS.registerWidget('fontawesome-brands', NetlifyCMSWidgetFontawesome.Brands, NetlifyCMSWidgetFontawesome.Preview)
+  </script>
+</body>
+
+</html>

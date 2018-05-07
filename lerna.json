@@ -1,8 +1,8 @@
 {
   "lerna": "2.11.0",
   "packages": [
-    "examples",
-    "packages/*"
+    "core/*",
+    "widgets/*"
   ],
   "version": "independent",
   "npmClient": "yarn",
@@ -10,15 +10,10 @@
   "commands": {
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": true,
-      "message": "chore(release): publish %s",
-      "ignore": [
-        "examples"
-      ]
+      "conventionalCommits": true
     }
   },
   "ignoreChanges": [
-    "**/examples/**",
     "**/*.md",
     "**/*.yml",
     "**/*.yaml",

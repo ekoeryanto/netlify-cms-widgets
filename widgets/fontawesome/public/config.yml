@@ -1,0 +1,21 @@
+backend:
+  name: test-repo
+  login: false
+media_folder: assets
+collections:
+- name: example
+  label: Example
+  files:
+  - file: _data/fontawesome.yml
+    name: fontawesome-widget
+    label: Fontawesome
+    fields:
+    - name: fontawesome-solid
+      label: Fontawesome Solid Widget
+      widget: fontawesome-solid
+    - name: fontawesome-brands
+      label: Fontawesome Brands Widget
+      widget: fontawesome-brands
+    - name: fontawesome-regular
+      label: Fontawesome Regular Widget
+      widget: fontawesome-regular

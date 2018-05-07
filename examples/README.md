@@ -1,3 +1,0 @@
-# netlify-cms-widget-examples
-
-

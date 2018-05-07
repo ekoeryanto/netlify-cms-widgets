@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Color Example | Netlify CMS Widgets</title>
+  <link rel="stylesheet" href="netlify-cms-extended/dist/cms.css">
+
+</head>
+
+<body>
+  <script src="netlify-cms-extended/dist/extended.js"></script>
+  <script src="shims/dist/index.js"></script>
+
+  <script src="@pake/react-color/lib/umd/index.js"></script>
+  <script src="umd/color.js"></script>
+
+  <script>
+    CMS.registerWidget('color', NetlifyCMSWidgetColor.Control, NetlifyCMSWidgetColor.Preview)
+  </script>
+</body>
+
+</html>

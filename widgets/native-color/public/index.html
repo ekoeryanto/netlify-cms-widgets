@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Native Color Example | Netlify CMS Widgets</title>
+  <link rel="stylesheet" href="netlify-cms-extended/dist/cms.css">
+
+</head>
+
+<body>
+  <script src="netlify-cms-extended/dist/extended.js"></script>
+  <script src="shims/dist/index.js"></script>
+
+  <script src="umd/native-color.js"></script>
+
+  <script>
+    CMS.registerWidget('native-color', NetlifyCMSWidgetNativeColor.Control)
+  </script>
+</body>
+
+</html>

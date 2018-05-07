@@ -1,0 +1,17 @@
+backend:
+  name: test-repo
+  login: false
+media_folder: assets
+collections:
+- name: example
+  label: Example
+  editor:
+    preview: false
+  files:
+  - file: _data/color.yml
+    name: color-widget
+    label: Color Widget
+    fields:
+    - name: color
+      label: Color
+      widget: color

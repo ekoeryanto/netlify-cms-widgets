@@ -1,67 +1,65 @@
 module.exports = function (plop) {
-  // Add new package
-  plop.setGenerator(`package`, {
-    description: `This is sets up the basic files for a new package.`,
+  plop.setGenerator('widget', {
+    description: 'Generate basic files for new widget',
     prompts: [
       {
-        type: `input`,
-        name: `name`,
-        message: `Name of new package`
+        type: 'input',
+        name: 'name',
+        message: 'Widget name'
       },
       {
-        type: `input`,
-        name: `author`,
-        message: `Author of the package`,
+        type: 'input',
+        name: 'author',
+        message: 'Widget author',
         default: 'Eko Eryanto <ekoeryanto@gmail.com>'
-      },
-      {
-        type: `confirm`,
-        name: `multiple`,
-        message: `multiple module (yes, if it needs widget preview)?`,
-        default: true
       }
     ],
-    actions: (data) =>
+    actions: data =>
       [
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/package.json`,
-          templateFile: `plop-templates/package/package.json.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/package.json',
+          templateFile: 'plop-templates/widget/package.json.hbs'
         },
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/src/index.js`,
-          templateFile: `plop-templates/package/index.js.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/src/index.js',
+          templateFile: 'plop-templates/widget/index.js.hbs'
         },
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/src/{{pascalCase name}}Control.js`,
-          templateFile: `plop-templates/package/control.js.hbs`
-        },
-        data.multiple && {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/src/{{pascalCase name}}Preview.js`,
-          templateFile: `plop-templates/package/preview.js.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/src/Control.js',
+          templateFile: 'plop-templates/widget/control.js.hbs'
         },
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/README.md`,
-          templateFile: `plop-templates/package/README.md.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/src/Preview.js',
+          templateFile: 'plop-templates/widget/preview.js.hbs'
         },
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/.babelrc`,
-          templateFile: `plop-templates/package/.babelrc.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/README.md',
+          templateFile: 'plop-templates/widget/README.md.hbs'
         },
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/webpack.config.js`,
-          templateFile: `plop-templates/package/webpack.config.js.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/.babelrc',
+          templateFile: 'plop-templates/widget/.babelrc.hbs'
         },
         {
-          type: `add`,
-          path: `packages/{{kebabCase name}}/.gitignore`,
-          templateFile: `plop-templates/package/.gitignore.hbs`
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/rollup.config.js',
+          templateFile: 'plop-templates/widget/rollup.config.js.hbs'
+        },
+        {
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/public/index.html',
+          templateFile: 'plop-templates/widget/index.html.hbs'
+        },
+        {
+          type: 'add',
+          path: 'packages/{{kebabCase name}}/public/config.yml',
+          templateFile: 'plop-templates/widget/config.yml.hbs'
         }
       ].filter(Boolean)
   })

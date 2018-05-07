@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{titleCase name}} Example | Netlify CMS Widgets</title>
+  <link rel="stylesheet" href="netlify-cms-extended/dist/cms.css">
+
+</head>
+
+<body>
+  <script src="netlify-cms-extended/dist/extended.js"></script>
+  <script src="shims/dist/index.js"></script>
+
+  <script src="umd/{{kebabCase name}}.js"></script>
+
+  <script>
+    CMS.registerWidget('{{name}}', NetlifyCMSWidget{{pascalCase name}}.Control, NetlifyCMSWidget{{pascalCase name}}.Preview)
+  </script>
+</body>
+
+</html>

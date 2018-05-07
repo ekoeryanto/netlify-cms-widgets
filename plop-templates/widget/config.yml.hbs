@@ -1,0 +1,15 @@
+backend:
+  name: test-repo
+  login: false
+media_folder: assets
+collections:
+- name: example
+  label: Example
+  files:
+  - file: _data/{{name}}.yml
+    name: {{name}}-widget
+    label: {{titleCase name}} Widget
+    fields:
+    - name: {{name}}
+      label: {{titleCase name}}
+      widget: {{name}}
