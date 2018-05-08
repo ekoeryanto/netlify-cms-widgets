@@ -29,7 +29,7 @@ const formats = ['umd', 'cjs', 'es']
 
 const extension = prod ? 'min.js' : 'js'
 
-const plugins = [
+let plugins = [
   replacePlugin({
     'process.env.NODE_ENV': JSON.stringify(environment)
   }),
@@ -42,16 +42,25 @@ const plugins = [
   })
 ]
 
-watch &&
-  plugins.concat([
+if (watch) {
+  plugins = plugins.concat([
     servePlugin({
-      contentBase: ['../../node_modules', '../../widgets', '../../core', 'dist', 'public'],
+      contentBase: [
+        '../../node_modules',
+        '../../widgets',
+        '../../core',
+        'dist',
+        'public'
+      ],
       historyApiFallback: true
     }),
     livereloadPlugin()
   ])
+}
 
-prod && plugins.concat([stripPlugin(), uglifyPlugin()])
+if (prod) {
+  plugins = plugins.concat([stripPlugin(), uglifyPlugin()])
+}
 
 const createOutput = (format = 'umd') => ({
   sourcemap: prod,
