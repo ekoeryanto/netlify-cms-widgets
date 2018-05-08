@@ -1,13 +1,27 @@
 {
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "transform-react-remove-prop-types",
+          {
+            "removeImport": true,
+            "additionalLibraries": ["react-immutable-proptypes"]
+          }
+        ]
+      ]
+    }
+  },
   "presets": [
+    ["@babel/preset-env", {
+      "modules": false
+    }],
     [
-      "env",
+      "@babel/preset-react",
       {
-        "modules": false
+        "pragma": "h"
       }
     ],
-    "react",
-    "stage-2"
-  ],
-  "plugins": ["external-helpers"]
+    "@babel/preset-stage-3"
+  ]
 }
