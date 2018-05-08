@@ -1,4 +1,4 @@
-import React from 'react'
+import createReactClass from 'create-react-class'
 import ImmutablePropTypes from 'react-immutable-proptypes'
 import PropTypes from 'prop-types'
 import VirtualizedSelect from 'react-virtualized-select'
@@ -21,8 +21,8 @@ export default function (option = {}) {
 
   fontawesome.library.add(icons)
 
-  return class Base extends React.Component {
-    static propTypes = {
+  return createReactClass({
+    propTypes: {
       onChange: PropTypes.func.isRequired,
       forID: PropTypes.string.isRequired,
       value: PropTypes.node,
@@ -32,15 +32,15 @@ export default function (option = {}) {
       field: ImmutablePropTypes.mapContains({
         default: PropTypes.string
       }).isRequired
-    }
+    },
 
-    static defaultProps = {
-      value: ''
-    }
+    getDefaultProps () {
+      return {value: ''}
+    },
 
-    handleChange = (option = { label: '', value: '' }) => {
+    handleChange (option = { label: '', value: '' }) {
       this.props.onChange(option.value)
-    }
+    },
 
     renderLabel ({
       focusedOption,
@@ -77,7 +77,7 @@ export default function (option = {}) {
           <Preview value={option.value} />
         </div>
       )
-    }
+    },
 
     renderValue (option) {
       return (
@@ -93,7 +93,7 @@ export default function (option = {}) {
           <Preview value={option.value} />
         </div>
       )
-    }
+    },
 
     render () {
       const {
@@ -127,5 +127,5 @@ export default function (option = {}) {
         </div>
       )
     }
-  }
+  })
 }

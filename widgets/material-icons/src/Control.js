@@ -1,10 +1,10 @@
-import React from 'react'
+import createReactClass from 'create-react-class'
 import PropTypes from 'prop-types'
 import ImmutablePropTypes from 'react-immutable-proptypes'
 import VirtualizedSelect from 'react-virtualized-select'
 
-export class Control extends React.Component {
-  static propTypes = {
+export const Control = createReactClass({
+  propTypes: {
     onChange: PropTypes.func.isRequired,
     forID: PropTypes.string.isRequired,
     value: PropTypes.node,
@@ -14,15 +14,15 @@ export class Control extends React.Component {
     field: ImmutablePropTypes.mapContains({
       default: PropTypes.string
     }).isRequired
-  }
+  },
 
-  static defaultProps = {
-    value: ''
-  }
+  getDdefaultProps () {
+    return {value: ''}
+  },
 
-  handleChange = (option = { name: '' }) => {
+  handleChange (option = { name: '' }) {
     this.props.onChange(option.name)
-  }
+  },
 
   renderLabel ({
     focusedOption,
@@ -59,7 +59,7 @@ export class Control extends React.Component {
         <i className='material-icons'>{option.name}</i>
       </div>
     )
-  }
+  },
 
   renderValue (option) {
     return (
@@ -75,7 +75,7 @@ export class Control extends React.Component {
         <i className='material-icons'>{option.name}</i>
       </div>
     )
-  }
+  },
 
   fetchCodepoints (input, callback) {
     // eslint-disable-next-line no-undef
@@ -93,7 +93,7 @@ export class Control extends React.Component {
           complete: true
         })
       })
-  }
+  },
 
   render () {
     const {
@@ -127,4 +127,4 @@ export class Control extends React.Component {
       </div>
     )
   }
-}
+})

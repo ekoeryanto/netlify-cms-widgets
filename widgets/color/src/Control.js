@@ -1,4 +1,4 @@
-import React from 'react'
+import createReactClass from 'create-react-class'
 import PropTypes from 'prop-types'
 import ImmutablePropTypes from 'react-immutable-proptypes'
 import { SketchPicker } from '@pake/react-color'
@@ -6,8 +6,8 @@ import { SketchPicker } from '@pake/react-color'
 const DEFAULT_FORMAT = 'hex'
 const DEFAULT_COLOR = '#ffffff'
 
-export class Control extends React.Component {
-  static propTypes = {
+export const Control = createReactClass({
+  propTypes: {
     onChange: PropTypes.func.isRequired,
     forID: PropTypes.string.isRequired,
     value: PropTypes.node,
@@ -20,13 +20,15 @@ export class Control extends React.Component {
       presets: ImmutablePropTypes.list,
       alpha: PropTypes.bool
     }).isRequired
-  }
+  },
 
-  static defaultProps = {
-    value: ''
-  }
+  getDefaultProps () {
+    return {
+      value: ''
+    }
+  },
 
-  handleChangeComplete = color => {
+  handleChangeComplete (color) {
     const alpha = !this.props.field.get('alpha', true)
     const format = this.props.field.get('format') || DEFAULT_FORMAT
     let selected = color[format]
@@ -37,7 +39,7 @@ export class Control extends React.Component {
       selected = `${type}(${value})`
     }
     this.props.onChange(selected)
-  }
+  },
 
   render () {
     const {
@@ -71,4 +73,4 @@ export class Control extends React.Component {
       </div>
     )
   }
-}
+})

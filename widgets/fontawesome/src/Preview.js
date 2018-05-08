@@ -1,14 +1,14 @@
-import React from 'react'
+import createReactClass from 'create-react-class'
 import PropTypes from 'prop-types'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-export class Preview extends React.Component {
-  static propTypes = {
+export const Preview = createReactClass({
+  propTypes: {
     value: PropTypes.node.isRequired
-  }
+  },
 
   render () {
-    const {value, ...props} = this.props
+    const { value, ...props } = this.props
     return <FontAwesomeIcon icon={value.split(' ')} {...props} />
   }
-}
+})

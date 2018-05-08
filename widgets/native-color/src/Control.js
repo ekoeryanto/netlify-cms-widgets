@@ -1,9 +1,9 @@
-import React from 'react'
+import createReactClass from 'create-react-class'
 import PropTypes from 'prop-types'
 import ImmutablePropTypes from 'react-immutable-proptypes'
 
-export class Control extends React.Component {
-  static propTypes = {
+export const Control = createReactClass({
+  propTypes: {
     onChange: PropTypes.func.isRequired,
     forID: PropTypes.string.isRequired,
     value: PropTypes.node,
@@ -13,14 +13,22 @@ export class Control extends React.Component {
     field: ImmutablePropTypes.mapContains({
       default: PropTypes.string
     }).isRequired
-  }
+  },
 
-  static defaultProps = {
-    value: ''
-  }
+  getDefaultProps () {
+    return { value: '' }
+  },
 
   render () {
-    const { forID, field, value, setActiveStyle, setInactiveStyle, onChange, classNameWrapper } = this.props
+    const {
+      forID,
+      field,
+      value,
+      setActiveStyle,
+      setInactiveStyle,
+      onChange,
+      classNameWrapper
+    } = this.props
     const currentValue = value || field.get('default')
     return (
       <label
@@ -28,7 +36,7 @@ export class Control extends React.Component {
         onFocus={setActiveStyle}
         htmlFor={forID}
         className={classNameWrapper}
-        style={{borderColor: currentValue}}
+        style={{ borderColor: currentValue }}
       >
         <input
           id={forID}
@@ -39,4 +47,4 @@ export class Control extends React.Component {
       </label>
     )
   }
-}
+})

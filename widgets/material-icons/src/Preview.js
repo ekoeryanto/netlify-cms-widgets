@@ -1,12 +1,12 @@
-import React from 'react'
+import createReactClass from 'create-react-class'
 import PropTypes from 'prop-types'
 
-export class Preview extends React.Component {
-  static propTypes = {
+export const Preview = createReactClass({
+  propTypes: {
     value: PropTypes.node
-  }
+  },
 
   render () {
     return <i className='material-icons'>{this.props.value}</i>
   }
-}
+})
