@@ -41,6 +41,7 @@
     "@babel/preset-stage-3": "^7.0.0-beta.46",
     "@pake/react-color": "^3.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "lodash": "^4.17.10",
     "module-igniter": "^0.1.0",
     "netlify-cms": "^1.7.0",
     "npm-run-all": "^4.1.2",
