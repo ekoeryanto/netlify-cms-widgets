@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.1.0...netlify-cms-widget-fontawesome@1.1.1) (2018-05-12)
+
+
+### Bug Fixes
+
+* iife globals wrapped on window to avoid unwanted character ([3eae5be](https://github.com/ekoeryanto/netlify-cms-widgets/commit/3eae5be)), closes [#4](https://github.com/ekoeryanto/netlify-cms-widgets/issues/4)
+
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.0.1...netlify-cms-widget-fontawesome@1.1.0) (2018-05-12)
 

@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-color",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Color widget for Netlify CMS.",
   "main": "dist/cjs/color.min.js",
   "browser": "dist/umd/color.min.js",
