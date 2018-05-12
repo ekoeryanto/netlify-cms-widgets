@@ -20,7 +20,7 @@ before_install:
 
 install: yarn --ignore-engines
 
-script: yarn lerna build
+script: yarn lerna run build
 
 notifications:
     email: false
