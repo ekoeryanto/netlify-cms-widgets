@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ekoeryanto/netlify-cms-widgets.svg?branch=master)](https://travis-ci.org/ekoeryanto/netlify-cms-widgets)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) 
 [![lerna](https://img.shields.io/badge/consistent%20with-plop-50b9d3.svg)](https://plopjs.com/)
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/netlify-cms-widgets)
