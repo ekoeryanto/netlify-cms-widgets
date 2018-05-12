@@ -5,7 +5,7 @@ const environment = process.env.NODE_ENV || 'development'
 const prod = environment === 'production'
 const watch = process.env.ROLLUP_WATCH
 
-let globals = {
+const globals = {
   'netlify-cms': 'CMS',
   react: 'React',
   'react-dom': 'ReactDOM',
