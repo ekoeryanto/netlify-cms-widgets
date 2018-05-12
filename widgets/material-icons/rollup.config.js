@@ -1,4 +1,5 @@
 import igniter from 'module-igniter'
+import { mapValues } from 'lodash'
 
 const plug = igniter({ prefix: 'rollup-plugin-' })
 const environment = process.env.NODE_ENV || 'development'
@@ -28,7 +29,7 @@ const createOutput = (format = 'umd') => ({
   name: 'NetlifyCMSWidgetMaterialIcons',
   file: `dist/${format}/material-icons.${extension}`,
   format,
-  globals
+  globals: format === 'iife' ? mapValues(globals, o => `window['${o}']`) : globals
 })
 
 export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
