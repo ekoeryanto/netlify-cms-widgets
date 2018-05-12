@@ -80,7 +80,7 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
             '../../node_modules',
             '../../widgets',
             '../../core',
-            'dist',
+            `dist/${WATCH_FORMAT}`,
             'public'
           ],
           historyApiFallback: true
