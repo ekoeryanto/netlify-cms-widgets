@@ -12,8 +12,13 @@
 </head>
 
 <body>
-  <script src="netlify-cms-extended/dist/extended.js"></script>
-  <script src="shims/dist/index.js"></script>
+  <!-- <script src="netlify-cms-extended/dist/extended.js"></script> -->
+  <!-- <script src="shims/dist/index.js"></script> -->
+
+  <script src="netlify-cms-extended/dist/cms.js"></script>
+  <script src="react/umd/react.production.min.js"></script>
+  <script src="prop-types/prop-types.min.js"></script>
+
   <script src="react-virtualized-select/dist/umd/react-virtualized-select.js"></script>
   <script src="@fortawesome/fontawesome-free-solid/index.js"></script>
   <script src="@fortawesome/fontawesome-free-brands/index.js"></script>
@@ -21,7 +26,7 @@
   <script src="@fortawesome/react-fontawesome/index.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/combine/npm/@fortawesome/fontawesome,npm/@fortawesome/react-fontawesome,npm/@fortawesome/fontawesome-free-solid,npm/@fortawesome/fontawesome-free-regular,npm/@fortawesome/fontawesome-free-brands"></script> -->
 
-  <script src="umd/fontawesome.js"></script>
+  <script src="umd/fontawesome.min.js"></script>
 
   <script>
     CMS.registerWidget('fontawesome-solid', NetlifyCMSWidgetFontawesome.Solid, NetlifyCMSWidgetFontawesome.Preview)

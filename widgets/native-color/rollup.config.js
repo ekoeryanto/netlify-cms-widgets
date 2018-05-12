@@ -1,65 +1,26 @@
-import resolvePlugin from 'rollup-plugin-node-resolve'
-import commonJsPlugin from 'rollup-plugin-commonjs'
-import babelPlugin from 'rollup-plugin-babel'
-import replacePlugin from 'rollup-plugin-replace'
-import stripPlugin from 'rollup-plugin-strip'
-import uglifyPlugin from 'rollup-plugin-uglify'
-import servePlugin from 'rollup-plugin-serve'
-import livereloadPlugin from 'rollup-plugin-livereload'
+import igniter from 'module-igniter'
 
+const plug = igniter({ prefix: 'rollup-plugin-' })
 const environment = process.env.NODE_ENV || 'development'
 const prod = environment === 'production'
 const watch = process.env.ROLLUP_WATCH
 
-const globals = {
-  'netlify-cms-extended': 'CMS',
-  react: 'CMS.React',
-  'react-dom': 'CMS.ReactDOM',
-  'prop-types': 'CMS.PropTypes',
-  immutable: 'CMS.Immutable',
-  'react-immutable-proptypes': 'CMS.ImmutablePropTypes',
-  classnames: 'CMS.classNames',
-  'create-react-class': 'CMS.createReactClass'
+let globals = {
+  'netlify-cms': 'CMS',
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'prop-types': 'PropTypes',
+  immutable: 'Immutable',
+  'react-immutable-proptypes': 'ImmutablePropTypes',
+  classnames: 'classNames',
+  'create-react-class': 'createClass'
 }
 
 const external = Object.keys(globals)
-
-const formats = ['umd', 'cjs', 'es']
-
+const WATCH_FORMAT = process.env.WATCH_FORMAT || 'umd'
+const formats = ['umd', 'iife', 'cjs', 'es']
 const extension = prod ? 'min.js' : 'js'
-
-let plugins = [
-  replacePlugin({
-    'process.env.NODE_ENV': JSON.stringify(environment)
-  }),
-  babelPlugin({
-    exclude: ['**/node_modules/**']
-  }),
-  resolvePlugin(),
-  commonJsPlugin({
-    include: ['**/node_modules/**']
-  })
-]
-
-if (watch) {
-  plugins = plugins.concat([
-    servePlugin({
-      contentBase: [
-        '../../node_modules',
-        '../../widgets',
-        '../../core',
-        'dist',
-        'public'
-      ],
-      historyApiFallback: true
-    }),
-    livereloadPlugin()
-  ])
-}
-
-if (prod) {
-  plugins = plugins.concat([stripPlugin(), uglifyPlugin()])
-}
+const isBrowser = format => format === 'umd' || format === 'iife'
 
 const createOutput = (format = 'umd') => ({
   sourcemap: prod,
@@ -69,9 +30,58 @@ const createOutput = (format = 'umd') => ({
   globals
 })
 
-export default {
+export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
   input: 'src/index.js',
-  output: formats.map(format => createOutput(format)),
+  output: createOutput(format),
   external,
-  plugins
-}
+  plugins: [
+    ...plug({
+      replace: { 'process.env.NODE_ENV': JSON.stringify(environment) },
+      'node-resolve': true,
+      commonjs: {
+        include: ['**/node_modules/**']
+      },
+      babel: {
+        exclude: ['**/node_modules/**'],
+        presets: [
+          isBrowser(format) && [
+            '@babel/preset-react',
+            {
+              pragma: 'h'
+            }
+          ]
+        ].filter(Boolean),
+        plugins: [
+          isBrowser(format) && [
+            'transform-react-remove-prop-types',
+            {
+              removeImport: true,
+              additionalLibraries: ['react-immutable-proptypes']
+            }
+          ]
+        ].filter(Boolean)
+      },
+      postcss: {
+        sourcemap: prod,
+        minimize: prod
+      }
+    }),
+    ...plug('strip', 'uglify', prod),
+    ...plug(
+      {
+        serve: {
+          contentBase: [
+            '../../node_modules',
+            '../../widgets',
+            '../../core',
+            'dist',
+            'public'
+          ],
+          historyApiFallback: true
+        },
+        livereload: true
+      },
+      watch
+    )
+  ]
+}))
