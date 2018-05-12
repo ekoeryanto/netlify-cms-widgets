@@ -1,5 +1,5 @@
 [build]
-  command = "yarn lerna bootstrap && yarn lerna run build"
+  command = "yarn lerna run build"
 [build.environment]
   NODE_VERSION = "8"
   YARN_VERSION = "1.6.0"
