@@ -8,7 +8,9 @@ cache:
 node_js:
   - "6"
   - "8"
-  - "10"
-script: yarn run lerna build
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+install: yarn --ignore-engines
+script: yarn lerna build
 notifications:
     email: false
