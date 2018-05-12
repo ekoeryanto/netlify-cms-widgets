@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.0.1...netlify-cms-widget-fontawesome@1.1.0) (2018-05-12)
+
+
+### Features
+
+* patch to work with official netlify-cms ([c47c7ae](https://github.com/ekoeryanto/netlify-cms-widgets/commit/c47c7ae))
+
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.0.0...netlify-cms-widget-fontawesome@1.0.1) (2018-05-08)
 
