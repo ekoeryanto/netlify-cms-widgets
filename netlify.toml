@@ -3,4 +3,4 @@
 [build.environment]
   NODE_VERSION = "8"
   YARN_VERSION = "1.6.0"
-  YARN_FLAGS = "--ignore-engines"
+  YARN_FLAGS = "--ignore-engines --pure-lockfile"
