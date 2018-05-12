@@ -1,5 +1,18 @@
 {
   "lerna": "2.11.0",
+  "changelog": {
+    "repo": "ekoeryanto/netlify-cms-widgets",
+    "cacheDir": ".changelog",
+    "labels": {
+      "enhancement": ":rocket: Enhancement",
+      "Breaking Change": ":boom: Breaking Change",
+      "New Feature": ":rocket: New Feature",
+      "Bug Fix": ":bug: Bug Fix",
+      "Polish": ":nail_care: Polish",
+      "Docs": ":memo: Documentation",
+      "Internal": ":house: Internal"
+    }
+  },
   "packages": [
     "widgets/*",
     "core/*"

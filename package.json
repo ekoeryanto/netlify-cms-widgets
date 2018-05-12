@@ -22,6 +22,7 @@
   "eslint-plugin-standard": "^3.1.0",
   "husky": "^0.14.3",
   "lerna": "^2.11.0",
+  "lerna-changelog": "^0.7.0",
   "lint-staged": "^7.0.5",
   "plop": "^2.0.0"
  },
