@@ -7,6 +7,10 @@ export const Preview = createReactClass({
   },
 
   render () {
-    return <i className='material-icons'>{this.props.value}</i>
+    return this.props.value ? (
+      <i className='material-icons'>{this.props.value}</i>
+    ) : (
+      ''
+    )
   }
 })
