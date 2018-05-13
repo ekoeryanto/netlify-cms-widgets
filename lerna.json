@@ -18,9 +18,11 @@
     "core/*"
   ],
   "version": "independent",
-  "npmClient": "yarn",
-  "useWorkspaces": true,
   "commands": {
+    "bootstrap": {
+      "hoist": true,
+      "npmCiMode": true
+    },
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true

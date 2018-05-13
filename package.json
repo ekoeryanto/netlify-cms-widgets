@@ -2,7 +2,6 @@
  "private": true,
  "scripts": {
   "boot": "lerna bootstrap",
-  "start": "yarn workspace examples run start",
   "lint": "eslint --ignore-path .gitignore --fix",
   "commitmsg": "commitlint -e $GIT_PARAMS",
   "precommit": "lint-staged"
@@ -37,18 +36,8 @@
    "@commitlint/config-conventional"
   ]
  },
- "workspaces": {
-  "packages": [
-   "widgets/*",
-   "core/*"
-  ],
-  "nohoist": [
-   "parcel-bundler"
-  ]
- },
  "eslintIgnore": [
   "dist",
-  "node_modules",
-  ".cache"
+  "node_modules"
  ]
 }

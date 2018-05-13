@@ -13,7 +13,7 @@ npm install netlify-cms-widget-native-color
 ```js
 import CMS from 'netlify-cms'
 import * as NativeColorWidget from 'netlify-cms-widget-native-color'
-CMS.registerWidget('native-color', NativeColorWidget.Control, NativeColorWidget.Preview)
+CMS.registerWidget('native-color', NativeColorWidget.Control)
 ```
 
 Add to your config.yml:
