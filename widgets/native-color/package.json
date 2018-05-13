@@ -10,12 +10,12 @@
     "src/**"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm-run-all clean build:*",
+    "start": "rollup -c -w",
+    "build": "npm-run-all --parallel build:*",
     "build:development": "rollup -c",
     "build:production": "rollup -c --environment NODE_ENV:production",
-    "watch": "rollup -c -w",
-    "prepublishOnly": "npm-run-all clean build"
+    "prebuild": "rimraf dist",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "netlify",
