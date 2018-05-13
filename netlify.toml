@@ -1,6 +1,4 @@
 [build]
   command = "npx lerna run build"
 [build.environment]
-  NODE_VERSION = "8"
-  YARN_VERSION = "1.6.0"
-  YARN_FLAGS = "--no-ignore-optional --ignore-engines --pure-lockfile"
+  NODE_VERSION = "10"
