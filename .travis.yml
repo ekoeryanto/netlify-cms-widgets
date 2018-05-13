@@ -4,23 +4,18 @@ cache:
   yarn: true
   directories:
     - $HOME/.npm
-    - $HOME/.yarn-cache
     - node_modules
 
 node_js:
   - "6"
   - "8"
 
-env:
-  global:
-    - PATH=$HOME/.yarn/bin:$PATH
-
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - if [[ `npm -v` != 6* ]]; then npm i -g npm@6; fi
 
-install: yarn --ignore-engines
+install: npm ci
 
-script: yarn lerna bootstrap && yarn lerna run build
+script: npx lerna bootstrap && npx lerna run build
 
 notifications:
     email: false
