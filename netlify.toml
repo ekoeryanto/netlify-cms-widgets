@@ -1,4 +1,5 @@
 [build]
   command = "npx lerna run build"
 [build.environment]
-  NODE_VERSION = "10"
+  NODE_VERSION = "8"
+  NPM_VERSION = "6.0.1"
