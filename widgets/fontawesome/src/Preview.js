@@ -9,6 +9,6 @@ export const Preview = createReactClass({
 
   render () {
     const { value, ...props } = this.props
-    return <FontAwesomeIcon icon={value.split(' ')} {...props} />
+    return value ? <FontAwesomeIcon icon={value.split(' ')} {...props} /> : ''
   }
 })
