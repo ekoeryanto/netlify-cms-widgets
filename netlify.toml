@@ -1,5 +1,5 @@
 [build]
-  command = "npx lerna run build"
+  command = "npx lerna bootstrap && npx lerna run build"
 [build.environment]
   NODE_VERSION = "8"
   NPM_VERSION = "6.0.1"
