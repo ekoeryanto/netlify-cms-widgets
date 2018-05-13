@@ -20,7 +20,6 @@
   "version": "independent",
   "commands": {
     "bootstrap": {
-      "hoist": true,
       "npmCiMode": true
     },
     "publish": {
