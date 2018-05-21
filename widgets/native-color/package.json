@@ -61,5 +61,10 @@
   },
   "optionalDependencies": {
     "netlify-cms-extended": "^1.7.0"
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "prop-types": "^15.6.1",
+    "react-immutable-proptypes": "^2.1.0"
   }
 }

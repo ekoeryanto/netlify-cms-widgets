@@ -1,14 +1,9 @@
-import createReactClass from 'create-react-class'
-import PropTypes from 'prop-types'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-export const Preview = createReactClass({
-  propTypes: {
-    value: PropTypes.node.isRequired
-  },
+const Preview = props =>
+  (props.value ? <FontAwesomeIcon icon={props.value.split(' ')} {...props} /> : '');
 
-  render () {
-    const { value, ...props } = this.props
-    return value ? <FontAwesomeIcon icon={value.split(' ')} {...props} /> : ''
-  }
-})
+Preview.propTypes = {
+  value: PropTypes.node.isRequired,
+};

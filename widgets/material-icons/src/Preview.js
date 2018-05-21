@@ -1,16 +1,9 @@
-import createReactClass from 'create-react-class'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-export const Preview = createReactClass({
-  propTypes: {
-    value: PropTypes.node
-  },
+const Preview = props => (props.value ? <i className="material-icons">{props.value}</i> : '');
 
-  render () {
-    return this.props.value ? (
-      <i className='material-icons'>{this.props.value}</i>
-    ) : (
-      ''
-    )
-  }
-})
+Preview.propTypes = {
+  value: PropTypes.node.isRequired,
+};
+
+export default Preview;

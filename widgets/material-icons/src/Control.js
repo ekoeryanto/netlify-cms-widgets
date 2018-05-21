@@ -1,52 +1,55 @@
-import createReactClass from 'create-react-class'
-import PropTypes from 'prop-types'
-import ImmutablePropTypes from 'react-immutable-proptypes'
-import VirtualizedSelect from 'react-virtualized-select'
+import createReactClass from 'create-react-class';
+import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+import VirtualizedSelect from 'react-virtualized-select';
 
-export const Control = createReactClass({
+export default createReactClass({
   propTypes: {
     onChange: PropTypes.func.isRequired,
     forID: PropTypes.string.isRequired,
-    value: PropTypes.node,
+    value: PropTypes.node.isRequired,
     setActiveStyle: PropTypes.func.isRequired,
     setInactiveStyle: PropTypes.func.isRequired,
     classNameWrapper: PropTypes.string.isRequired,
     field: ImmutablePropTypes.mapContains({
-      default: PropTypes.string
-    }).isRequired
+      default: PropTypes.string,
+    }).isRequired,
   },
 
-  getDdefaultProps () {
-    return {value: ''}
+  getDdefaultProps() {
+    return { value: '' };
   },
 
-  handleChange (option = { name: '' }) {
-    this.props.onChange(option.name)
+  handleChange(option = { name: '' }) {
+    this.props.onChange(option.name);
   },
 
-  renderLabel ({
-    focusedOption,
-    focusedOptionIndex,
-    focusOption,
-    key,
-    labelKey,
-    option,
-    options,
-    selectValue,
-    style,
-    valueArray,
-    valueKey
+  fetchCodepoints(input, callback) {
+    // eslint-disable-next-line no-undef
+    fetch('https://unpkg.com/material-design-icons/iconfont/codepoints')
+      .then(res => res.text())
+      .then(text => text.split(/\r?\n/).map(t => ({ name: t.split(' ')[0] })))
+      .then((options) => {
+        callback(null, {
+          options: options.filter(i => i.name.includes(input.toLowerCase)),
+          complete: true,
+        });
+      });
+  },
+
+  renderLabel({
+    focusedOption, focusOption, key, option, selectValue, style, valueArray,
   }) {
-    let styles = {
+    const styles = {
       display: 'flex',
       alignItems: 'center',
-      padding: '0 1rem'
-    }
+      padding: '0 1rem',
+    };
     if (option === focusedOption) {
-      styles.backgroundColor = 'rgba(0, 126, 255, 0.1)'
+      styles.backgroundColor = 'rgba(0, 126, 255, 0.1)';
     }
     if (valueArray.indexOf(option) >= 0) {
-      styles.fontWeight = 'bold'
+      styles.fontWeight = 'bold';
     }
     return (
       <div
@@ -55,56 +58,33 @@ export const Control = createReactClass({
         onMouseEnter={() => focusOption(option)}
         style={Object.assign(styles, style)}
       >
-        <label style={{ flex: '1 1 auto' }}>{option.name}</label>
-        <i className='material-icons'>{option.name}</i>
+        <div style={{ flex: '1 1 auto' }}>{option.name}</div>
+        <i className="material-icons">{option.name}</i>
       </div>
-    )
+    );
   },
 
-  renderValue (option) {
+  renderValue(option) {
     return (
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          margin: '0 1.5rem 0 0.5rem'
+          margin: '0 1.5rem 0 0.5rem',
         }}
       >
-        <label>{option.name}</label>
-        <i className='material-icons'>{option.name}</i>
+        <div>{option.name}</div>
+        <i className="material-icons">{option.name}</i>
       </div>
-    )
+    );
   },
 
-  fetchCodepoints (input, callback) {
-    // eslint-disable-next-line no-undef
-    fetch('https://unpkg.com/material-design-icons/iconfont/codepoints')
-      .then(res => res.text())
-      .then(text => text.split(/\r?\n/).map(t => ({ name: t.split(' ')[0] })))
-      .then(options => {
-        input = input.toLowerCase()
-        options = options.filter(i => {
-          return i.name.includes(input)
-        })
-
-        callback(null, {
-          options,
-          complete: true
-        })
-      })
-  },
-
-  render () {
+  render() {
     const {
-      forID,
-      field,
-      value,
-      setActiveStyle,
-      setInactiveStyle,
-      classNameWrapper
-    } = this.props
-    let currentValue = value || field.get('default')
+      forID, field, value, setActiveStyle, setInactiveStyle, classNameWrapper,
+    } = this.props;
+    const currentValue = value || field.get('default');
 
     return (
       <div
@@ -115,8 +95,8 @@ export const Control = createReactClass({
       >
         <VirtualizedSelect
           async
-          labelKey='name'
-          valueKey='name'
+          labelKey="name"
+          valueKey="name"
           clearable={false}
           loadOptions={this.fetchCodepoints}
           value={currentValue}
@@ -125,6 +105,6 @@ export const Control = createReactClass({
           onChange={this.handleChange}
         />
       </div>
-    )
-  }
-})
+    );
+  },
+});
