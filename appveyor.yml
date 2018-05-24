@@ -10,5 +10,6 @@ before_build:
 build_script:
   - npx lerna run build
 cache:
+  - 'node_modules'
   - '%AppData%/npm-cache'
   - '%AppData%/npm'
