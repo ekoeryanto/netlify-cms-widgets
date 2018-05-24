@@ -5,20 +5,15 @@ install:
   - npx npm@6 ci --silent >nul
 build: off
 test_script:
-  - rem *********** Using node 6 ***********
-  - npx -p node@6 npm rebuild >nul
-  - npx -p node@6 lerna bootstrap
-  - npx -p node@6 lerna run build
+  - rem *********** Using node 10 ***********
+  - npx -p node@10 npm rebuild >nul
+  - npx -p node@10 lerna bootstrap
+  - npx -p node@10 lerna run build
 
   - rem *********** Using node 8 ***********
   - npx -p node@8 npm rebuild >nul
   - npx -p node@8 lerna bootstrap
   - npx -p node@8 lerna run build
-
-  - rem *********** Using node 10 ***********
-  - npx -p node@10 npm rebuild >nul
-  - npx -p node@10 lerna bootstrap
-  - npx -p node@10 lerna run build
 cache:
   - '%AppData%/npm-cache'
   - '%AppData%/npm'
