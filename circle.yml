@@ -23,11 +23,6 @@ jobs:
           name: Update to NPM v6
           command: npm i -g npm@6
       - run:
-          name: Show Versions
-          command: |
-                npm --version
-                npx --version
-      - run:
           name: Install dependencies
           command: npm ci
       - run:
