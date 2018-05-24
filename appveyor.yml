@@ -1,6 +1,6 @@
 install:
-  - npm install --silent --global npx
   - set PATH=%APPDATA%\npm;%PATH%
+  - npx --version >nul 2>&1 || npm install --silent --global npx
   - npm install >nul
 platform:
   - x86
