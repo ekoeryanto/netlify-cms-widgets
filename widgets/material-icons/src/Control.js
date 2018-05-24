@@ -31,14 +31,22 @@ export default createReactClass({
       .then(text => text.split(/\r?\n/).map(t => ({ name: t.split(' ')[0] })))
       .then((options) => {
         callback(null, {
-          options: options.filter(i => i.name.includes(input.toLowerCase)),
+          options: options.filter(i => i.name.includes(input.toLowerCase())),
           complete: true,
         });
       });
   },
 
   renderLabel({
-    focusedOption, focusOption, key, option, selectValue, style, valueArray,
+    focusedOption,
+    focusOption,
+    key,
+    labelKey,
+    option,
+    selectValue,
+    style,
+    valueArray,
+    valueKey,
   }) {
     const styles = {
       display: 'flex',
@@ -53,13 +61,16 @@ export default createReactClass({
     }
     return (
       <div
+        role="menu"
+        tabIndex={0}
         key={key}
         onClick={() => selectValue(option)}
+        onKeyDown={e => e.keyCode === 13 && selectValue(option)}
         onMouseEnter={() => focusOption(option)}
         style={Object.assign(styles, style)}
       >
-        <div style={{ flex: '1 1 auto' }}>{option.name}</div>
-        <i className="material-icons">{option.name}</i>
+        <div style={{ flex: '1 1 auto' }}>{option[labelKey]}</div>
+        <i className="material-icons">{option[valueKey]}</i>
       </div>
     );
   },

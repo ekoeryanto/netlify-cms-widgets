@@ -1,5 +1,5 @@
-import igniter from 'module-igniter';
 import { mapValues } from 'lodash';
+import igniter from 'module-igniter';
 
 const plug = igniter({ prefix: 'rollup-plugin-' });
 const environment = process.env.NODE_ENV || 'development';
@@ -45,23 +45,23 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
       },
       babel: {
         exclude: ['**/node_modules/**'],
-        presets: [
-          isBrowser(format) && [
-            '@babel/preset-react',
-            {
-              pragma: 'h',
-            },
-          ],
-        ].filter(Boolean),
-        plugins: [
-          isBrowser(format) && [
-            'transform-react-remove-prop-types',
-            {
-              removeImport: true,
-              additionalLibraries: ['react-immutable-proptypes'],
-            },
-          ],
-        ].filter(Boolean),
+        plugins: isBrowser(format)
+          ? [
+            [
+              'transform-react-jsx',
+              {
+                pragma: 'h',
+              },
+            ],
+            [
+              'transform-react-remove-prop-types',
+              {
+                removeImport: true,
+                additionalLibraries: ['react-immutable-proptypes'],
+              },
+            ],
+          ]
+          : [],
       },
       postcss: {
         sourcemap: prod,
@@ -87,40 +87,3 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
     ),
   ],
 }));
-
-// export default {
-//   input: 'src/index.js',
-//   output: formats.map(format => createOutput(format)),
-//   external,
-//   plugins: [
-//     ...plug({
-//       replace: {
-//         'process.env.NODE_ENV': JSON.stringify(environment)
-//       },
-//       babel: {
-//         exclude: ['**/node_modules/**']
-//       },
-//       'node-resolve': true,
-//       commonjs: {
-//         include: ['**/node_modules/**']
-//       }
-//     }),
-//     ...plug(
-//       {
-//         serve: {
-//           contentBase: [
-//             '../../node_modules',
-//             '../../widgets',
-//             '../../core',
-//             'dist',
-//             'public'
-//           ],
-//           historyApiFallback: true
-//         },
-//         livereload: true
-//       },
-//       watch
-//     ),
-//     ...plug('strip', 'uglify', prod)
-//   ]
-// }

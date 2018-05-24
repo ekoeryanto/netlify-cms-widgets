@@ -7,3 +7,5 @@ const Preview = props =>
 Preview.propTypes = {
   value: PropTypes.node.isRequired,
 };
+
+export default Preview;

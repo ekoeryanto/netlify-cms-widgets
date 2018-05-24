@@ -5,14 +5,14 @@ import VirtualizedSelect from 'react-virtualized-select';
 import fontawesome from '@fortawesome/fontawesome';
 import Preview from './Preview';
 
-export default function (option = {}) {
-  const [type, icons] = Object.entries(option)[0];
+export default function (fontIcons = {}) {
+  const [type, icons] = Object.entries(fontIcons)[0];
   if (!icons) {
     // eslint-disable-next-line
     return function({ field }) {
       return (
         <div>
-          <strong>Fontawesome {type}</strong> not found but it has registered to{' '}
+          <strong>Fontawesome {type}</strong> not found but it registered to{' '}
           <em>{field.get('widget')}</em> widget.
         </div>
       );
@@ -38,12 +38,20 @@ export default function (option = {}) {
       return { value: '' };
     },
 
-    handleChange(opts = { label: '', value: '' }) {
-      this.props.onChange(opts.value);
+    handleChange(change = { label: '', value: '' }) {
+      this.props.onChange(change.value);
     },
 
     renderLabel({
-      focusedOption, focusOption, key, selectValue, style, valueArray,
+      focusedOption,
+      focusOption,
+      key,
+      labelKey,
+      option,
+      selectValue,
+      style,
+      valueArray,
+      valueKey,
     }) {
       const styles = {
         display: 'flex',
@@ -58,18 +66,21 @@ export default function (option = {}) {
       }
       return (
         <div
+          role="menu"
           key={key}
+          tabIndex={0}
           onClick={() => selectValue(option)}
+          onKeyDown={e => e.keyCode === 13 && selectValue(option)}
           onMouseEnter={() => focusOption(option)}
           style={Object.assign(styles, style)}
         >
-          <div style={{ flex: '1 1 auto' }}>{option.label}</div>
-          <Preview value={option.value} />
+          <div style={{ flex: '1 1 auto' }}>{option[labelKey]}</div>
+          <Preview value={option[valueKey]} />
         </div>
       );
     },
 
-    renderValue(roption) {
+    renderValue({ label, value }) {
       return (
         <div
           style={{
@@ -79,8 +90,8 @@ export default function (option = {}) {
             margin: '0 1.5rem 0 0.5rem',
           }}
         >
-          <div>{roption.label}</div>
-          <Preview value={roption.value} />
+          <div>{label}</div>
+          <Preview value={value} />
         </div>
       );
     },

@@ -4,21 +4,21 @@
 <head>
   <meta charset="utf-8" />
   <title>Color Example | Netlify CMS Widgets</title>
-  <link rel="stylesheet" href="netlify-cms-extended/dist/cms.css">
+  <link rel="stylesheet" href="netlify-cms/dist/cms.css">
 
 </head>
 
 <body>
   <!-- <script src="netlify-cms-extended/dist/extended.js"></script> -->
   <!-- <script src="shims/dist/index.js"></script> -->
-  <script src="netlify-cms-extended/dist/cms.js"></script>
+  <script src="netlify-cms/dist/cms.js"></script>
   <script src="react/umd/react.production.min.js"></script>
 
   <script src="@pake/react-color/lib/umd/index.js"></script>
   <script src="color.js"></script>
 
   <script>
-    CMS.registerWidget('color', NetlifyCMSWidgetColor.Control, NetlifyCMSWidgetColor.Preview)
+    CMS.registerWidget('color', NetlifyCMSWidgetColor.Control)
   </script>
 </body>
 

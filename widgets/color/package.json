@@ -5,7 +5,10 @@
   "main": "dist/cjs/color.min.js",
   "browser": "dist/umd/color.min.js",
   "module": "dist/es/color.min.js",
-  "files": ["dist/**", "src/**"],
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
   "scripts": {
     "start": "rollup -c -w",
     "build": "npm-run-all --parallel build:*",
@@ -14,7 +17,13 @@
     "prebuild": "rimraf dist",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["netlify", "netlify-cms", "cms", "widget", "color"],
+  "keywords": [
+    "netlify",
+    "netlify-cms",
+    "cms",
+    "widget",
+    "color"
+  ],
   "author": "Eko Eryanto <ekoeryanto@gmail.com>",
   "bugs": {
     "url": "https://github.com/ekoeryanto/netlify-cms-widgets/issues"
@@ -26,12 +35,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
-    "@babel/preset-react": "^7.0.0-beta.46",
-    "@babel/preset-stage-3": "^7.0.0-beta.46",
     "@pake/react-color": "^3.0.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "create-react-class": "^15.6.3",
     "lodash": "^4.17.10",
     "module-igniter": "^1.0.1",
@@ -41,7 +51,7 @@
     "react-immutable-proptypes": "^2.1.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.59.1",
-    "rollup-plugin-babel": "^4.0.0-beta.4",
+    "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-livereload": "^0.6.0",
     "rollup-plugin-node-resolve": "^3.3.0",
@@ -54,6 +64,7 @@
   "peerDependencies": {
     "@pake/react-color": "^3.0.0",
     "create-react-class": "^15.6.3",
+    "module-igniter": "^1.0.1",
     "netlify-cms": "^1.7.0",
     "prop-types": "^15.6.1",
     "react-immutable-proptypes": "^2.1.0"

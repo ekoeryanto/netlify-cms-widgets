@@ -44,7 +44,4 @@ Add to your config.yml:
 
 ## Example
 
-see `public` directory and note that we are using `netlify-cms-extended` there.
-
-See [here](https://github.com/netlify/netlify-cms/pull/1292)
-for more info.
+see `public` directory
