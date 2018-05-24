@@ -9,13 +9,15 @@ cache:
 node_js:
   - "6"
   - "8"
+  - "10"
 
 before_install:
-  - if [[ `npm -v` != 6* ]]; then npm i -g npm@6; fi
+  - npm i --silent -g npm@6
 
-install: npm ci
+install: npm install --silent
 
-script: npx lerna bootstrap && npx lerna run build
+before_script: npx lerna bootstrap
+script: npx lerna run build
 
 notifications:
     email: false
