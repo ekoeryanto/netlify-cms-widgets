@@ -1,19 +1,14 @@
 install:
-  - ps: Install-Product node 10 x64
   - npm install --silent --global npx
   - set PATH=%APPDATA%\npm;%PATH%
-  - npx npm@6 ci --silent >nul
-build: off
-test_script:
-  - rem *********** Using node 10 ***********
-  - npx -p node@10 npm rebuild >nul
-  - npx -p node@10 lerna bootstrap
-  - npx -p node@10 lerna run build
-
-  - rem *********** Using node 8 ***********
-  - npx -p node@8 npm rebuild >nul
-  - npx -p node@8 lerna bootstrap
-  - npx -p node@8 lerna run build
+  - npm install >nul
+platform:
+  - x86
+  - x64
+before_build:
+  - npx lerna bootstrap
+build_script:
+  - npx lerna run build
 cache:
   - '%AppData%/npm-cache'
   - '%AppData%/npm'
