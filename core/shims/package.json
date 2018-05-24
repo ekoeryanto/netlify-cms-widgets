@@ -1,16 +1,25 @@
 {
   "name": "netlify-cms-shims",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Shims for Netlify CMS.",
   "main": "dist/index.js",
-  "files": ["dist/**", "src/**"],
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "prepublishOnly": "npm-run-all clean build"
   },
-  "keywords": ["netlify", "netlify-cms", "cms", "widget", "shims"],
+  "keywords": [
+    "netlify",
+    "netlify-cms",
+    "cms",
+    "widget",
+    "shims"
+  ],
   "author": "Eko Eryanto <ekoeryanto@gmail.com>",
   "bugs": {
     "url": "https://github.com/ekoeryanto/netlify-cms-widgets/issues"
