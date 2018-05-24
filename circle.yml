@@ -24,7 +24,7 @@ jobs:
           command: npm i -g npm@6
       - run:
           name: Install dependencies
-          command: npm ci
+          command: npm i --silent
       - run:
           name: Bootstrap
           command: npx lerna bootstrap
