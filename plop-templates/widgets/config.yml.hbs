@@ -6,10 +6,10 @@ collections:
 - name: example
   label: Example
   files:
-  - file: _data/{{name}}.yml
-    name: {{name}}-widget
+  - file: _data/{{dashCase name}}.yml
+    name: {{dashCase name}}-widget
     label: {{titleCase name}} Widget
     fields:
-    - name: {{name}}
+    - name: {{dashCase name}}
       label: {{titleCase name}}
-      widget: {{name}}
+      widget: {{dashCase name}}

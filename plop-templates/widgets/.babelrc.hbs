@@ -1,3 +1,13 @@
-{ "env": { "production": { "plugins": [ [ "transform-react-remove-prop-types", { "removeImport": true, "additionalLibraries":
-["react-immutable-proptypes"] } ] ] } }, "presets": [ ["env", { "modules": false }], [ "react", { "pragma":
-"h" } ], "stage-3" ] }
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "react",
+    "stage-3"
+  ],
+  "plugins": ["external-helpers"]
+}

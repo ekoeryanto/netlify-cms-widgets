@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ImmutablePropTypes from 'react-immutable-proptypes'
+import createReactClass from 'create-react-class';
+import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 
-export class Control extends React.Component {
-  static propTypes = {
+export default createReactClass({
+  propTypes: {
     onChange: PropTypes.func.isRequired,
     forID: PropTypes.string.isRequired,
     value: PropTypes.node,
@@ -11,15 +11,15 @@ export class Control extends React.Component {
     setInactiveStyle: PropTypes.func.isRequired,
     classNameWrapper: PropTypes.string.isRequired,
     field: ImmutablePropTypes.mapContains({
-      default: PropTypes.string
-    }).isRequired
-  }
+      default: PropTypes.string,
+    }).isRequired,
+  },
 
-  static defaultProps = {
-    value: ''
-  }
+  getDefaultProps() {
+    return { value: '' };
+  },
 
-  render () {
+  render() {
     const {
       forID,
       field,
@@ -27,19 +27,24 @@ export class Control extends React.Component {
       setActiveStyle,
       setInactiveStyle,
       onChange,
-      classNameWrapper
-    } = this.props
-    const currentValue = value || field.get('default')
+      classNameWrapper,
+    } = this.props;
+    const currentValue = value || field.get('default');
     return (
-      <input
-        id={forID}
-        className={classNameWrapper}
-        type='text'
-        value={currentValue}
+      <label
         onBlur={setInactiveStyle}
         onFocus={setActiveStyle}
-        onChange={e => onChange(e.target.value)}
-      />
-    )
-  }
-}
+        htmlFor={forID}
+        className={classNameWrapper}
+        style=\{{ borderColor: currentValue }}
+      >
+        <input
+          id={forID}
+          value={currentValue}
+          type="text"
+          onChange={e => onChange(e.target.value)}
+        />
+      </label>
+    );
+  },
+});
