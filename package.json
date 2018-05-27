@@ -3,8 +3,10 @@
   "scripts": {
     "boot": "lerna bootstrap",
     "lint": "eslint --ignore-path .gitignore --fix",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "precommit": "lint-staged"
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.2.0",
@@ -15,11 +17,11 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
-    "husky": "^0.14.3",
     "lerna": "^2.11.0",
     "lerna-changelog": "^0.7.0",
     "lint-staged": "^7.1.2",
-    "plop": "^2.0.0"
+    "plop": "^2.0.0",
+    "yorkie": "^1.0.3"
   },
   "lint-staged": {
     "*.js": [
