@@ -9,7 +9,7 @@
     "pre-commit": "lint-staged"
   },
   "devDependencies": {
-    "@commitlint/cli": "^6.2.0",
+    "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
