@@ -1,3 +1,4 @@
+import React from 'react';
 import createReactClass from 'create-react-class';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
