@@ -28,6 +28,19 @@ export default createReactClass({
     };
   },
 
+  getInitialState() {
+    return {
+      displayColorPicker: false,
+      color: {
+        r: '255',
+        g: '255',
+        b: '255',
+        a: '1',
+      },
+      hex: DEFAULT_COLOR,
+    };
+  },
+
   handleChangeComplete(color) {
     const alpha = !this.props.field.get('alpha', true);
     const format = this.props.field.get('format') || DEFAULT_FORMAT;
@@ -38,7 +51,16 @@ export default createReactClass({
 
       selected = `${type}(${value})`;
     }
+    this.setState({ color: color.rgb, hex: color.hex });
     this.props.onChange(selected);
+  },
+
+  handleClick() {
+    this.setState({ displayColorPicker: !this.state.displayColorPicker });
+  },
+
+  handleClose() {
+    this.setState({ displayColorPicker: false });
   },
 
   render() {
@@ -61,6 +83,44 @@ export default createReactClass({
       props.presetColors = field.get('presets').toArray();
     }
 
+    const styles = {
+      color: {
+        width: '30px',
+        height: '30px',
+        borderRadius: '50%',
+        background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
+        float: 'left',
+        marginRight: '10px',
+      },
+      swatch: {
+        minWidth: '120px',
+        padding: '8px',
+        background: '#ffffff',
+        boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+        display: 'inline-block',
+        cursor: 'pointer',
+        borderRadius: '25px',
+        textAlign: 'left',
+      },
+      hex: {
+        verticalAlign: 'middle',
+        lineHeight: '30px',
+      },
+      popover: {
+        position: 'absolute',
+        zIndex: '2',
+      },
+      cover: {
+        position: 'fixed',
+        top: '0px',
+        right: '0px',
+        bottom: '0px',
+        left: '0px',
+      },
+    };
+
+    styles.color.boxShadow = this.state.hex === DEFAULT_COLOR ? '0 0 0 1px rgba(0,0,0,.1)' : 'none';
+
     return (
       <div
         id={forID}
@@ -69,7 +129,19 @@ export default createReactClass({
         onBlur={setInactiveStyle}
         style={{ borderColor: value }}
       >
-        <SketchPicker onChangeComplete={this.handleChangeComplete} {...props} />
+        <button style={styles.swatch} onClick={this.handleClick}>
+          <div style={styles.color} />
+          <span style={styles.hex}>{this.state.hex}</span>
+        </button>
+        {this.state.displayColorPicker ?
+          <div style={styles.popover}>
+            <div tabIndex={0} role="button" style={styles.cover} onClick={this.handleClose} onKeyPress={this.handleClose} />
+            <SketchPicker
+              color={this.state.color}
+              onChangeComplete={this.handleChangeComplete}
+              {...props}
+            />
+          </div> : null}
       </div>
     );
   },
