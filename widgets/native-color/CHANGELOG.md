@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-native-color@2.2.0...netlify-cms-widget-native-color@2.2.1) (2018-06-12)
+
+
+
+
+**Note:** Version bump only for package netlify-cms-widget-native-color
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-native-color@2.1.1...netlify-cms-widget-native-color@2.2.0) (2018-05-24)
 

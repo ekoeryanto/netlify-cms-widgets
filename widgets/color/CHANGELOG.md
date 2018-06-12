@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-color@2.2.0...netlify-cms-widget-color@2.3.0) (2018-06-12)
+
+
+### Features
+
+* allow Color picker to be collapsed ([#17](https://github.com/ekoeryanto/netlify-cms-widgets/issues/17)) ([82c77b3](https://github.com/ekoeryanto/netlify-cms-widgets/commit/82c77b3)), closes [#15](https://github.com/ekoeryanto/netlify-cms-widgets/issues/15)
+
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-color@2.1.1...netlify-cms-widget-color@2.2.0) (2018-05-24)
 
