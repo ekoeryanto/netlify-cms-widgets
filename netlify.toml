@@ -1,5 +1,5 @@
 [build]
-  command = "npx lerna bootstrap && npx lerna run build && node demo/widgets/build.js"
+  command = "npm run build"
   publish = "dist"
 [build.environment]
   NODE_VERSION = "8"

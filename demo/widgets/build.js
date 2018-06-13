@@ -1,4 +1,3 @@
-process.env.NODE_ENV = 'production';
 // eslint-disable-next-line
 const Bundler = require('parcel-bundler');
 const { join } = require('path');
@@ -15,16 +14,10 @@ const options = {
   outDir: rootDir('dist'),
   outFile: 'index.html',
   publicUrl: './',
-  watch: false,
-  cache: true,
   cacheDir: rootDir('node_modules/.cache/demo/widgets'),
-  minify: true,
-  target: 'browser',
-  https: false,
   logLevel: 3,
   hmrPort: 0,
   sourceMaps: true,
-  hmrHostname: '',
   detailedReport: true,
 };
 
