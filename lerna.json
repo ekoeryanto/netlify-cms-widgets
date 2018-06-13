@@ -26,7 +26,10 @@
     },
     "publish": {
       "allowBranch": "master",
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "ignore": [
+        "widgets-demo"
+      ]
     }
   },
   "ignoreChanges": [
