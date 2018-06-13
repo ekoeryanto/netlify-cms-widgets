@@ -26,7 +26,7 @@ CMS.registerWidget(
   NetlifyCMSWidgetFontawesome.Preview,
 );
 
-CMS.registerPreviewStyle('https://fonts.googleapis.com/css?family=Material+Icons');
+// CMS.registerPreviewStyle('https://fonts.googleapis.com/css?family=Material+Icons');
 CMS.registerWidget(
   'material-icons',
   NetlifyCMSWidgetMaterialIcons.Control,
