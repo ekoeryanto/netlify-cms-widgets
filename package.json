@@ -3,7 +3,7 @@
   "scripts": {
     "prebuild": "lerna bootstrap",
     "build": "lerna run build",
-    "postbuild": "cross-env NODE_ENV=production node demo/widgets/build.js",
+    "postbuild": "parcel build --cache-dir=node_modules/.cache/parceljs/ demo/widgets/index.html",
     "lint": "eslint --ignore-path .gitignore --fix",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
