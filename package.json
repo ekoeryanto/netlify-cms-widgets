@@ -3,7 +3,9 @@
   "scripts": {
     "prebuild": "lerna bootstrap",
     "build": "lerna run build",
-    "postbuild": "parcel build --cache-dir=node_modules/.cache/parceljs/ demo/widgets/index.html",
+    "postbuild": "npm run demo",
+    "demo": "parcel build --cache-dir=node_modules/.cache/parceljs/ demo/widgets/index.html",
+    "postdemo": "ncp demo/widgets/static dist/",
     "lint": "eslint --ignore-path .gitignore --fix",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
@@ -23,6 +25,7 @@
     "lerna": "^2.11.0",
     "lerna-changelog": "^0.8.0",
     "lint-staged": "^7.2.0",
+    "ncp": "^2.0.0",
     "plop": "^2.0.0",
     "yorkie": "^1.0.3"
   },
