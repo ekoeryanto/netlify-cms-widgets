@@ -13,8 +13,18 @@ export default function (fontIcons = {}) {
     return function({ field }) {
       return (
         <div>
-          <strong>Fontawesome {type}</strong> not found but it registered to{' '}
-          <em>{field.get('widget')}</em> widget.
+          <strong>
+Fontawesome
+            {type}
+          </strong>
+          {' '}
+not found but it registered to
+          {' '}
+          <em>
+            {field.get('widget')}
+          </em>
+          {' '}
+widget.
         </div>
       );
     };
@@ -40,7 +50,8 @@ export default function (fontIcons = {}) {
     },
 
     handleChange(change = { label: '', value: '' }) {
-      this.props.onChange(change.value);
+      const { onChange } = this.props;
+      onChange(change.value);
     },
 
     renderLabel({
@@ -75,7 +86,9 @@ export default function (fontIcons = {}) {
           onMouseEnter={() => focusOption(option)}
           style={Object.assign(styles, style)}
         >
-          <div style={{ flex: '1 1 auto' }}>{option[labelKey]}</div>
+          <div style={{ flex: '1 1 auto' }}>
+            {option[labelKey]}
+          </div>
           <Preview value={option[valueKey]} />
         </div>
       );
@@ -91,7 +104,9 @@ export default function (fontIcons = {}) {
             margin: '0 1.5rem 0 0.5rem',
           }}
         >
-          <div>{label}</div>
+          <div>
+            {label}
+          </div>
           <Preview value={value} />
         </div>
       );

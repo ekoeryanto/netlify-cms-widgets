@@ -22,7 +22,8 @@ export default createReactClass({
   },
 
   handleChange(option = { name: '' }) {
-    this.props.onChange(option.name);
+    const { onChange } = this.props;
+    onChange(option.name);
   },
 
   fetchCodepoints(input, callback) {
@@ -70,8 +71,12 @@ export default createReactClass({
         onMouseEnter={() => focusOption(option)}
         style={Object.assign(styles, style)}
       >
-        <div style={{ flex: '1 1 auto' }}>{option[labelKey]}</div>
-        <i className="material-icons">{option[valueKey]}</i>
+        <div style={{ flex: '1 1 auto' }}>
+          {option[labelKey]}
+        </div>
+        <i className="material-icons">
+          {option[valueKey]}
+        </i>
       </div>
     );
   },
@@ -86,8 +91,12 @@ export default createReactClass({
           margin: '0 1.5rem 0 0.5rem',
         }}
       >
-        <div>{option.name}</div>
-        <i className="material-icons">{option.name}</i>
+        <div>
+          {option.name}
+        </div>
+        <i className="material-icons">
+          {option.name}
+        </i>
       </div>
     );
   },

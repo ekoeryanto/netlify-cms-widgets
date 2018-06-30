@@ -43,8 +43,9 @@ export default createReactClass({
   },
 
   handleChangeComplete(color) {
-    const alpha = !this.props.field.get('alpha', true);
-    const format = this.props.field.get('format') || DEFAULT_FORMAT;
+    const { field, onChange } = this.props;
+    const alpha = !field.get('alpha', true);
+    const format = field.get('format') || DEFAULT_FORMAT;
     let selected = color[format];
     if (typeof selected !== 'string') {
       const type = `${format}${alpha ? 'a' : ''}`;
@@ -53,11 +54,12 @@ export default createReactClass({
       selected = `${type}(${value})`;
     }
     this.setState({ color: color.rgb, hex: color.hex });
-    this.props.onChange(selected);
+    onChange(selected);
   },
 
   handleClick() {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
+    const { displayColorPicker } = this.state;
+    this.setState({ displayColorPicker: !displayColorPicker });
   },
 
   handleClose() {
@@ -84,12 +86,13 @@ export default createReactClass({
       props.presetColors = field.get('presets').toArray();
     }
 
+    const { color, hex, displayColorPicker } = this.state;
     const styles = {
       color: {
         width: '30px',
         height: '30px',
         borderRadius: '50%',
-        background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
+        background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
         float: 'left',
         marginRight: '10px',
       },
@@ -120,7 +123,7 @@ export default createReactClass({
       },
     };
 
-    styles.color.boxShadow = this.state.hex === DEFAULT_COLOR ? '0 0 0 1px rgba(0,0,0,.1)' : 'none';
+    styles.color.boxShadow = hex === DEFAULT_COLOR ? '0 0 0 1px rgba(0,0,0,.1)' : 'none';
 
     return (
       <div
@@ -130,19 +133,23 @@ export default createReactClass({
         onBlur={setInactiveStyle}
         style={{ borderColor: value }}
       >
-        <button style={styles.swatch} onClick={this.handleClick}>
+        <button style={styles.swatch} onClick={this.handleClick} type="button">
           <div style={styles.color} />
-          <span style={styles.hex}>{this.state.hex}</span>
+          <span style={styles.hex}>
+            {hex}
+          </span>
         </button>
-        {this.state.displayColorPicker ?
-          <div style={styles.popover}>
-            <div tabIndex={0} role="button" style={styles.cover} onClick={this.handleClose} onKeyPress={this.handleClose} />
-            <SketchPicker
-              color={this.state.color}
-              onChangeComplete={this.handleChangeComplete}
-              {...props}
-            />
-          </div> : null}
+        {displayColorPicker
+          ? (
+            <div style={styles.popover}>
+              <div tabIndex={0} role="button" style={styles.cover} onClick={this.handleClose} onKeyPress={this.handleClose} />
+              <SketchPicker
+                color={color}
+                onChangeComplete={this.handleChangeComplete}
+                {...props}
+              />
+            </div>
+          ) : null}
       </div>
     );
   },
