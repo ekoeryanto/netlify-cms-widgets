@@ -44,7 +44,7 @@
     "create-react-class": "^15.6.3",
     "lodash": "^4.17.10",
     "module-igniter": "^1.0.1",
-    "netlify-cms": "^1.7.0",
+    "netlify-cms": "^2.0.8",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.1",
     "react-immutable-proptypes": "^2.1.0",
