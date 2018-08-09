@@ -1,5 +1,6 @@
 import igniter from 'module-igniter';
 import { mapValues } from 'lodash';
+import { minify } from 'uglify-es';
 
 const plug = igniter({ prefix: 'rollup-plugin-' });
 const environment = process.env.NODE_ENV || 'development';
@@ -67,7 +68,7 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
         minimize: prod,
       },
     }),
-    ...plug('strip', 'uglify', prod),
+    ...plug({ strip: { debugger: true }, 'uglify::uglify': [{}, minify] }, prod),
     ...plug(
       {
         serve: {

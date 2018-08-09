@@ -48,7 +48,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "create-react-class": "^15.6.3",
     "lodash": "^4.17.10",
-    "module-igniter": "^1.0.1",
+    "module-igniter": "^1.1.0",
     "netlify-cms": "^1.7.0",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.1",
@@ -64,7 +64,8 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-serve": "^0.4.2",
     "rollup-plugin-strip": "^1.1.1",
-    "rollup-plugin-uglify": "^4.0.0"
+    "rollup-plugin-uglify": "^4.0.0",
+    "uglify-es": "^3.3.9"
   },
   "peerDependencies": {
     "@fortawesome/fontawesome": "^1.1.6",
