@@ -3,6 +3,7 @@
   "extends": "airbnb",
   "rules": {
     "react/prefer-es6-class": [0, "never"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-unresolved": 0
   }
 }
