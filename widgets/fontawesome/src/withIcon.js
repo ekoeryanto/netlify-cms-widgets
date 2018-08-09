@@ -3,7 +3,7 @@ import createReactClass from 'create-react-class';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
 import VirtualizedSelect from 'react-virtualized-select';
-import fontawesome from '@fortawesome/fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import Preview from './Preview';
 
 export default function (fontIcons = {}) {
@@ -30,7 +30,7 @@ widget.
     };
   }
 
-  fontawesome.library.add(icons);
+  library.add(icons);
 
   return createReactClass({
     propTypes: {

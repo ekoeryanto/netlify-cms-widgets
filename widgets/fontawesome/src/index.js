@@ -1,13 +1,13 @@
-import brands from '@fortawesome/fontawesome-free-brands';
-import regular from '@fortawesome/fontawesome-free-regular';
-import solid from '@fortawesome/fontawesome-free-solid';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import Preview from './Preview';
 import withIcon from './withIcon';
 
-const Brands = withIcon({ brands });
-const Regular = withIcon({ regular });
-const Solid = withIcon({ solid });
+const Brands = withIcon({ fab });
+const Regular = withIcon({ far });
+const Solid = withIcon({ fas });
 
 export default {
   Preview,
