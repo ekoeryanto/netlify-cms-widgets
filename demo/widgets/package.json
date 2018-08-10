@@ -7,10 +7,6 @@
   },
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.6",
-    "@fortawesome/fontawesome-free-brands": "^5.0.11",
-    "@fortawesome/fontawesome-free-regular": "^5.0.11",
-    "@fortawesome/fontawesome-free-solid": "^5.0.11",
     "@fortawesome/react-fontawesome": "^0.1.0",
     "netlify-cms": "^1.7.0",
     "netlify-cms-widget-color": "*",
