@@ -1,4 +1,5 @@
 {
+  "name": "netlify-cms-widgets",
   "private": true,
   "scripts": {
     "prebuild": "lerna bootstrap",
