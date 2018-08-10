@@ -7,19 +7,16 @@ Fontawesome widget for Netlify CMS.
 ### As an npm package:
 
 ```shell
-npm install netlify-cms-widget-fontawesome react-virtualized-select @fortawesome/fontawesome @fortawesome/react-fontawesome @fortawesome/fontawesome-free-solid
+npm install netlify-cms-widget-fontawesome react-virtualized-select @fortawesome/fontawesome-free @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 ```scss
-// css
-@import "netlify-cms/dist/cms.css";
 @import "react-select/dist/react-select.css";
 @import "react-virtualized/styles.css";
 @import "react-virtualized-select/styles.css";
 ```
 
 ```js
-// js
 import CMS from "netlify-cms";
 import * as FontawesomeWidget from "netlify-cms-widget-fontawesome";
 import "react-select/dist/react-select.css";

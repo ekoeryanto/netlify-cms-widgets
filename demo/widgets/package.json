@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.0",
-    "netlify-cms": "^1.7.0",
+    "netlify-cms": "^2.0.0",
     "netlify-cms-widget-color": "*",
     "netlify-cms-widget-fontawesome": "*",
     "netlify-cms-widget-material-icons": "*",
