@@ -17,10 +17,10 @@ const globals = {
   classnames: 'classNames',
   'create-react-class': 'createClass',
   'react-virtualized-select': 'VirtualizedSelect',
-  '@fortawesome/fontawesome': 'fontawesome',
-  '@fortawesome/fontawesome-free-brands': 'fontawesome-free-brands',
-  '@fortawesome/fontawesome-free-regular': 'fontawesome-free-regular',
-  '@fortawesome/fontawesome-free-solid': 'fontawesome-free-solid',
+  '@fortawesome/fontawesome-free': 'FontAwesome',
+  '@fortawesome/free-brands-svg-icons': 'free-brands-svg-icons',
+  '@fortawesome/free-regular-svg-icons': 'free-regular-svg-icons',
+  '@fortawesome/free-solid-svg-icons': 'free-solid-svg-icons',
   '@fortawesome/react-fontawesome': 'react-fontawesome',
 };
 
