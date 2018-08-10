@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.3.0...netlify-cms-widget-fontawesome@1.3.1) (2018-08-10)
+
+
+### Bug Fixes
+
+* big bundle size ([746f733](https://github.com/ekoeryanto/netlify-cms-widgets/commit/746f733))
+
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.2.1...netlify-cms-widget-fontawesome@1.3.0) (2018-08-09)
 
