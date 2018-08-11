@@ -1,11 +1,12 @@
 import igniter from 'module-igniter';
-import { mapValues } from 'lodash';
+import { mapValues, startCase } from 'lodash';
 import { minify } from 'uglify-es';
 
 const plug = igniter({ prefix: 'rollup-plugin-' });
 const environment = process.env.NODE_ENV || 'development';
 const prod = environment === 'production';
 const watch = process.env.ROLLUP_WATCH;
+const FATYPE = (process.env.FATYPE || '').toLowerCase();
 
 const globals = {
   'netlify-cms': 'CMS',
@@ -32,14 +33,14 @@ const isBrowser = format => format === 'umd' || format === 'iife';
 
 const createOutput = (format = 'umd') => ({
   sourcemap: prod,
-  name: 'NetlifyCMSWidgetFontawesome',
-  file: `dist/${format}/fontawesome.${extension}`,
+  name: `NetlifyCMSWidgetFontawesome${startCase(FATYPE)}`,
+  file: `dist/${format}/${FATYPE || 'fontawesome'}.${extension}`,
   format,
   globals: format === 'iife' ? mapValues(globals, o => `window['${o}']`) : globals,
 });
 
 export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
-  input: 'src/index.js',
+  input: `src/${FATYPE ? startCase(FATYPE) : 'index'}.js`,
   output: createOutput(format),
   external,
   plugins: [

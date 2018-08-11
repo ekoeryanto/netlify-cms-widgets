@@ -6,25 +6,30 @@ import VirtualizedSelect from 'react-virtualized-select';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import Preview from './Preview';
 
-export default function (fontIcons = {}) {
-  const [type, icons] = Object.entries(fontIcons)[0];
+export default function (icons) {
+  const types = {
+    fab: 'brands',
+    far: 'regular',
+    fas: 'solid',
+  };
+
   if (!icons) {
     // eslint-disable-next-line
     return function({ field }) {
       return (
         <div>
           <strong>
-Fontawesome
-            {type}
+            Fontawesome
+            {types[icons.prefix]}
           </strong>
           {' '}
-not found but it registered to
+          not found but it registered to
           {' '}
           <em>
             {field.get('widget')}
           </em>
           {' '}
-widget.
+          widget.
         </div>
       );
     };
