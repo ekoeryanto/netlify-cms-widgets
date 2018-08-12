@@ -1,6 +1,6 @@
 {
   "name": "widgets-demo",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html"
@@ -10,7 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.1.0",
     "netlify-cms": "^2.0.0",
     "netlify-cms-widget-color": "*",
-    "netlify-cms-widget-fontawesome": "*",
+    "netlify-cms-widget-fontawesome": "^2.1.0",
     "netlify-cms-widget-material-icons": "*",
     "netlify-cms-widget-native-color": "*",
     "react-virtualized-select": "^3.1.3"

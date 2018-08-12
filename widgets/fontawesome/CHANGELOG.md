@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@2.0.0...netlify-cms-widget-fontawesome@2.1.0) (2018-08-12)
+
+
+### Features
+
+* **fontawesome:** add each bundle to each type ([#59](https://github.com/ekoeryanto/netlify-cms-widgets/issues/59)) ([c65843b](https://github.com/ekoeryanto/netlify-cms-widgets/commit/c65843b)), closes [#58](https://github.com/ekoeryanto/netlify-cms-widgets/issues/58)
+
+
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@1.3.1...netlify-cms-widget-fontawesome@2.0.0) (2018-08-10)
 
