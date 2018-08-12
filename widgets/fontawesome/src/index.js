@@ -1,18 +1,13 @@
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-
+import Brands from './Brands';
+import Regular from './Regular';
+import Solid from './Solid';
 import Preview from './Preview';
 import withIcon from './withIcon';
 
-const Brands = withIcon({ fab });
-const Regular = withIcon({ far });
-const Solid = withIcon({ fas });
-
 export default {
-  Preview,
   Brands,
   Regular,
   Solid,
+  Preview,
   withIcon,
 };

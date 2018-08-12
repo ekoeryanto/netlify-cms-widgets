@@ -12,8 +12,16 @@
   "scripts": {
     "start": "rollup -c -w",
     "build": "npm-run-all --parallel build:*",
-    "build:development": "rollup -c",
-    "build:production": "rollup -c --environment NODE_ENV:production",
+    "build:dev-all": "rollup -c",
+    "build:dev-preview": "rollup -c --environment FATYPE:preview",
+    "build:dev-regular": "rollup -c --environment FATYPE:regular",
+    "build:dev-solid": "rollup -c --environment FATYPE:solid",
+    "build:dev-brands": "rollup -c --environment FATYPE:brands",
+    "build:prod-all": "rollup -c --environment NODE_ENV:production",
+    "build:prod-preview": "rollup -c --environment NODE_ENV:production,FATYPE:preview",
+    "build:prod-regular": "rollup -c --environment NODE_ENV:production,FATYPE:regular",
+    "build:prod-solid": "rollup -c --environment NODE_ENV:production,FATYPE:solid",
+    "build:prod-brands": "rollup -c --environment NODE_ENV:production,FATYPE:brands",
     "prebuild": "rimraf dist",
     "prepublishOnly": "npm run build"
   },
