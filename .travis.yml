@@ -10,13 +10,9 @@ node_js:
   - "8"
   - "10"
 
-before_install:
-  - npm i --silent -g npx
-
 install: npm install --silent
 
-before_script: npx lerna bootstrap
-script: npx lerna run build
+script: npm run build
 
 notifications:
     email: false

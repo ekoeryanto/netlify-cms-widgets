@@ -1,14 +1,11 @@
 install:
   - set PATH=%APPDATA%\npm;%PATH%
-  - npx --version >nul 2>&1 || npm install --silent --global npx
   - npm install >nul
 platform:
   - x86
   - x64
-before_build:
-  - npx lerna bootstrap
 build_script:
-  - npx lerna run build
+  - npm run build
 cache:
   - 'node_modules'
   - '%AppData%/npm-cache'

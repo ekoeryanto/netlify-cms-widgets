@@ -19,17 +19,11 @@ jobs:
             - v{{ .Environment.CIRCLE_CACHE_VERSION }}-npm-cache-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}
             - v{{ .Environment.CIRCLE_CACHE_VERSION }}-npm-cache-master-{{ .Environment.CIRCLE_JOB }}
       - run:
-          name: Install npx
-          command: npm i --silent -g npx
-      - run:
           name: Install dependencies
           command: npm i --silent
       - run:
-          name: Bootstrap
-          command: npx lerna bootstrap
-      - run:
           name: Build
-          command: npx lerna run build
+          command: npm run build
 
       - save_cache:
           key: v{{ .Environment.CIRCLE_CACHE_VERSION }}-npm-lock-{{ .Branch }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "package-lock.json" }}
