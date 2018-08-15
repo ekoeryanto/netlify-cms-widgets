@@ -11,7 +11,7 @@ node_js:
   - "10"
 
 before_install:
-  - command -v npx >/dev/null 2>&1 || npm i --silent -g npx
+  - npm i --silent -g npx
 
 install: npm install --silent
 
