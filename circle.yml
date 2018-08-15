@@ -20,7 +20,7 @@ jobs:
             - v{{ .Environment.CIRCLE_CACHE_VERSION }}-npm-cache-master-{{ .Environment.CIRCLE_JOB }}
       - run:
           name: Install npx
-          command: command -v npx >/dev/null 2>&1 || npm i --silent -g npx
+          command: npm i --silent -g npx
       - run:
           name: Install dependencies
           command: npm i --silent
