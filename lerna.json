@@ -18,13 +18,6 @@
     "core/*"
   ],
   "version": "independent",
-  "ignoreChanges": [
-    "**/*.md",
-    "**/*.yml",
-    "**/*.yaml",
-    "**/*.toml",
-    "**/*.html"
-  ],
   "command": {
     "bootstrap": {
       "hoist": true,
@@ -33,8 +26,14 @@
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
+      "message": "chore(release): publish",
       "ignoreChanges": [
-        "widgets-demo"
+        "**/*.md",
+        "**/*.yml",
+        "**/*.yaml",
+        "**/*.toml",
+        "**/*.html",
+        "demo/**"
       ]
     }
   }
