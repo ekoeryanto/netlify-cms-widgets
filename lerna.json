@@ -20,8 +20,7 @@
   "version": "independent",
   "command": {
     "bootstrap": {
-      "hoist": true,
-      "npmCiMode": true
+      "npmClientArgs": ["--no-package-lock"]
     },
     "publish": {
       "allowBranch": "master",
