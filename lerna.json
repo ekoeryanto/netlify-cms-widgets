@@ -1,4 +1,5 @@
 {
+  "lerna": "2.11.0",
   "changelog": {
     "repo": "ekoeryanto/netlify-cms-widgets",
     "cacheDir": ".changelog",
@@ -18,7 +19,7 @@
     "core/*"
   ],
   "version": "independent",
-  "command": {
+  "commands": {
     "bootstrap": {
       "hoist": true,
       "npmCiMode": true
@@ -26,15 +27,16 @@
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
-      "message": "chore(release): publish",
-      "ignoreChanges": [
-        "**/*.md",
-        "**/*.yml",
-        "**/*.yaml",
-        "**/*.toml",
-        "**/*.html",
-        "demo/**"
+      "ignore": [
+        "widgets-demo"
       ]
     }
-  }
+  },
+  "ignoreChanges": [
+    "**/*.md",
+    "**/*.yml",
+    "**/*.yaml",
+    "**/*.toml",
+    "**/*.html"
+  ]
 }
