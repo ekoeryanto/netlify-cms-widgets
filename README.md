@@ -6,7 +6,3 @@
 
 # Netlify CMS Widgets 
 A collection of Netlify CMS Widgets that ported from React components or libraries
-
-## Packages
-This repository is a monorepo managed using Lerna and the packages is located inside `packages` directory. 
-Almost packages are generated with plop so they are consistent and easy to get started.
