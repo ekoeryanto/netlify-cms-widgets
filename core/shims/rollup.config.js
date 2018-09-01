@@ -3,8 +3,7 @@ import commonJsPlugin from 'rollup-plugin-commonjs';
 import babelPlugin from 'rollup-plugin-babel';
 import replacePlugin from 'rollup-plugin-replace';
 import stripPlugin from 'rollup-plugin-strip';
-import { uglify } from 'rollup-plugin-uglify';
-import { minify } from 'uglify-es';
+import { terser } from 'rollup-plugin-terser';
 
 const environment = process.env.NODE_ENV || 'development';
 
@@ -20,7 +19,7 @@ const plugins = [
     include: ['**/node_modules/**'],
   }),
   stripPlugin(),
-  uglify({}, minify),
+  terser(),
 ];
 
 export default {
