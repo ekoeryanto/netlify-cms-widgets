@@ -1,13 +1,18 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "modules": false
       }
     ],
-    "react",
-    "stage-3"
+    "@babel/preset-react"
   ],
-  "plugins": ["external-helpers"]
+  "plugins": [
+    "@babel/plugin-external-helpers",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-syntax-import-meta",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-json-strings"
+  ]
 }
