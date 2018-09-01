@@ -51,24 +51,21 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
         include: ['**/node_modules/**'],
       },
       babel: {
+        babelrc: false,
         exclude: ['**/node_modules/**'],
-        plugins: isBrowser(format)
-          ? [
-            [
-              'transform-react-jsx',
-              {
-                pragma: 'h',
-              },
-            ],
-            [
-              'transform-react-remove-prop-types',
-              {
-                removeImport: true,
-                additionalLibraries: ['react-immutable-proptypes'],
-              },
-            ],
-          ]
-          : [],
+        presets: [
+          ['@babel/preset-env', { modules: false }],
+          ['@babel/preset-react', isBrowser(format) ? { pragma: 'h' } : {}],
+        ],
+        plugins: [
+          isBrowser(format) && [
+            'transform-react-remove-prop-types',
+            {
+              removeImport: true,
+              additionalLibraries: ['react-immutable-proptypes'],
+            },
+          ],
+        ].filter(Boolean),
       },
       postcss: {
         sourcemap: prod,
