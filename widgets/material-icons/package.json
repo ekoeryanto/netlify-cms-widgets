@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-material-icons",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Material Icons widget for Netlify CMS.",
   "main": "dist/cjs/material-icons.min.js",
   "browser": "dist/umd/material-icons.min.js",
