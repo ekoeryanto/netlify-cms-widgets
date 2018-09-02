@@ -13,3 +13,4 @@ collections:
     - name: material-icons
       label: Material Icons
       widget: material-icons
+      default: delete

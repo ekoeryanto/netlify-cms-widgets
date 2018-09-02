@@ -15,7 +15,6 @@ const globals = {
   'react-immutable-proptypes': 'ImmutablePropTypes',
   classnames: 'classNames',
   'create-react-class': 'createClass',
-  'react-virtualized-select': 'VirtualizedSelect',
 };
 
 const external = Object.keys(globals);
@@ -41,7 +40,9 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
       replace: { 'process.env.NODE_ENV': JSON.stringify(environment) },
       'node-resolve': true,
       commonjs: {
-        include: ['**/node_modules/**'],
+        include: [
+          '**/node_modules/react',
+        ],
       },
       babel: {
         babelrc: false,
