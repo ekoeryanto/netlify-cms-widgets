@@ -21,19 +21,18 @@ export default createReactClass({
     return { value: '' };
   },
 
-  handleChange(option = { name: '' }) {
+  handleChange(option = { id: '' }) {
     const { onChange } = this.props;
-    onChange(option.name);
+    onChange(option.id);
   },
 
   fetchCodepoints(input, callback) {
     // eslint-disable-next-line no-undef
-    fetch('https://unpkg.com/material-design-icons/iconfont/codepoints')
-      .then(res => res.text())
-      .then(text => text.split(/\r?\n/).map(t => ({ name: t.split(' ')[0] })))
+    fetch('https://unpkg.com/material-design-icon-list/data/ids.json')
+      .then(res => res.json())
       .then((options) => {
         callback(null, {
-          options: options.filter(i => i.name.includes(input.toLowerCase())),
+          options: options.filter(i => i.id.includes(input.toLowerCase())),
           complete: true,
         });
       });
@@ -92,10 +91,10 @@ export default createReactClass({
         }}
       >
         <div>
-          {option.name}
+          {option.id}
         </div>
         <i className="material-icons">
-          {option.name}
+          {option.id}
         </i>
       </div>
     );
@@ -116,8 +115,8 @@ export default createReactClass({
       >
         <VirtualizedSelect
           async
-          labelKey="name"
-          valueKey="name"
+          labelKey="id"
+          valueKey="id"
           clearable={false}
           loadOptions={this.fetchCodepoints}
           value={currentValue}
