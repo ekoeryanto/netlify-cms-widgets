@@ -27,6 +27,7 @@
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
+      "message": "chore: publish",
       "ignore": [
         "widgets-demo"
       ]
