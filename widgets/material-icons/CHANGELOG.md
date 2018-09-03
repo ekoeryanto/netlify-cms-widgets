@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-material-icons@3.0.1...netlify-cms-widget-material-icons@4.0.0) (2018-09-03)
+
+
+### Chores
+
+* **deps:** using react list ([48e585d](https://github.com/ekoeryanto/netlify-cms-widgets/commit/48e585d))
+
+
+### Features
+
+* react-list for material-icons ([39d8803](https://github.com/ekoeryanto/netlify-cms-widgets/commit/39d8803))
+* using static size and direct json icon list ([2283a0a](https://github.com/ekoeryanto/netlify-cms-widgets/commit/2283a0a))
+
+
+### BREAKING CHANGES
+
+* **deps:** not using react-virtualized-select any more
+
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-material-icons@3.0.0...netlify-cms-widget-material-icons@3.0.1) (2018-09-02)
 
