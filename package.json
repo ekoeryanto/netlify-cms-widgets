@@ -4,7 +4,7 @@
   "scripts": {
     "prebuild": "lerna bootstrap",
     "build": "lerna run build",
-    "postbuild": "npm run demo",
+    "postbuild": "yarn demo",
     "demo": "parcel build --cache-dir=node_modules/.cache/parceljs/ demo/widgets/index.html",
     "postdemo": "ncp demo/widgets/static dist/",
     "lint": "eslint --ignore-path .gitignore --fix",
@@ -44,5 +44,10 @@
   "eslintIgnore": [
     "dist",
     "node_modules"
+  ],
+  "workspaces": [
+    "widgets/*",
+    "demo/*",
+    "core/*"
   ]
 }

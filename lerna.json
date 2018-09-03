@@ -19,6 +19,9 @@
     "core/*"
   ],
   "version": "independent",
+  "npmClient": "yarn",
+  "loglevel": "success",
+  "useWorkspaces": true,
   "commands": {
     "bootstrap": {
       "hoist": true,
