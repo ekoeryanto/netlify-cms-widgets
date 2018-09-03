@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.2"></a>
+## [4.0.2](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-material-icons@4.0.1...netlify-cms-widget-material-icons@4.0.2) (2018-09-03)
+
+
+### Bug Fixes
+
+* inconsistent icon size ([3faacbc](https://github.com/ekoeryanto/netlify-cms-widgets/commit/3faacbc))
+
+
+
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-material-icons@4.0.0...netlify-cms-widget-material-icons@4.0.1) (2018-09-03)
 
