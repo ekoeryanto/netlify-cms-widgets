@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@2.1.0...netlify-cms-widget-fontawesome@3.0.0) (2018-09-03)
+
+
+### Chores
+
+* **deps:** using react list ([48e585d](https://github.com/ekoeryanto/netlify-cms-widgets/commit/48e585d))
+
+
+### Features
+
+* using react list ([7819190](https://github.com/ekoeryanto/netlify-cms-widgets/commit/7819190))
+
+
+### BREAKING CHANGES
+
+* **deps:** not using react-virtualized-select any more
+* now depends on react-list not react-virtualized-select
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@2.0.0...netlify-cms-widget-fontawesome@2.1.0) (2018-08-12)
 
