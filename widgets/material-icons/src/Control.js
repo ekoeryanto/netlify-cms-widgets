@@ -47,7 +47,6 @@ export default createReactClass({
           type="uniform"
           itemRenderer={(x, key) => {
             const color = cux === x ? '#1976D2' : '#3F51B5';
-
             return (
               <i
                 role="button"
@@ -55,7 +54,9 @@ export default createReactClass({
                 tabIndex={0}
                 key={key}
                 className="material-icons"
-                style={{ cursor: 'pointer', color, fontSize: 62 }}
+                style={{
+                  cursor: 'pointer', color, fontSize: 62, width: 62, height: 62,
+                }}
                 onClick={e => onChange(e.target.textContent)}
               >
                 {icons[x]}
