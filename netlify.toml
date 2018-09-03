@@ -5,3 +5,4 @@
   NODE_VERSION = "8"
   NPM_VERSION = "6.1.0"
   YARN_VERSION = "1.9.4"
+  YARN_FLAGS = "--verbose"
