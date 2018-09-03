@@ -3,7 +3,7 @@ import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import ReactList from '@pake/react-list/esm/react-list.min';
-import icons from 'material-design-icon-list';
+import icons from 'material-design-icon-list/data/list.json';
 
 export default createReactClass({
   propTypes: {
@@ -39,6 +39,7 @@ export default createReactClass({
         style={{ overflow: 'auto' }}
       >
         <ReactList
+          useStaticSize
           axis="x"
           initialIndex={cux - (pageSize / 2 - 1)}
           pageSize={pageSize}

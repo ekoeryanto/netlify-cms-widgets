@@ -44,6 +44,7 @@ export default (watch ? [WATCH_FORMAT] : formats).map(format => ({
           '**/node_modules/react',
         ],
       },
+      json: true,
       babel: {
         babelrc: false,
         exclude: ['**/node_modules/**'],
