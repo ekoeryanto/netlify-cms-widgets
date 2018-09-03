@@ -16,7 +16,6 @@ const globals = {
   'react-immutable-proptypes': 'ImmutablePropTypes',
   classnames: 'classNames',
   'create-react-class': 'createClass',
-  'react-virtualized-select': 'VirtualizedSelect',
   '@fortawesome/fontawesome-free': 'FontAwesome',
   '@fortawesome/free-brands-svg-icons': 'free-brands-svg-icons',
   '@fortawesome/free-regular-svg-icons': 'free-regular-svg-icons',

@@ -13,9 +13,12 @@ collections:
     - name: fontawesome-solid
       label: Fontawesome Solid Widget
       widget: fontawesome-solid
+      default: fas allergies
     - name: fontawesome-brands
       label: Fontawesome Brands Widget
       widget: fontawesome-brands
+      default: fab amilia
     - name: fontawesome-regular
       label: Fontawesome Regular Widget
       widget: fontawesome-regular
+      default: far bell
