@@ -50,6 +50,7 @@ export default createReactClass({
             return (
               <i
                 role="button"
+                title={icons[x].replace(/_/g, ' ').toUpperCase()}
                 onKeyDown={e => e.keyCode === 13 && onChange(e.target.textContent)}
                 tabIndex={0}
                 key={key}
