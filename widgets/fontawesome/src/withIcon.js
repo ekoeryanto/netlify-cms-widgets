@@ -2,8 +2,8 @@ import React from 'react';
 import createReactClass from 'create-react-class';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
-import VirtualizedSelect from 'react-virtualized-select';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import ReactList from '@pake/react-list/esm/react-list.min';
 import Preview from './Preview';
 
 export default function (icons) {
@@ -25,11 +25,9 @@ export default function (icons) {
           {' '}
           not found but it registered to
           {' '}
-          <em>
-            {field.get('widget')}
-          </em>
+          <em>{field.get('widget')}</em>
           {' '}
-          widget.
+widget.
         </div>
       );
     };
@@ -54,67 +52,10 @@ export default function (icons) {
       return { value: '' };
     },
 
-    handleChange(change = { label: '', value: '' }) {
-      const { onChange } = this.props;
-      onChange(change.value);
-    },
-
-    renderLabel({
-      focusedOption,
-      focusOption,
-      key,
-      labelKey,
-      option,
-      selectValue,
-      style,
-      valueArray,
-      valueKey,
-    }) {
-      const styles = {
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 1rem',
+    getInitialState() {
+      return {
+        iconList: Object.values(icons).map(i => `${i.prefix} ${i.iconName}`),
       };
-      if (option === focusedOption) {
-        styles.backgroundColor = 'rgba(0, 126, 255, 0.1)';
-      }
-      if (valueArray.indexOf(option) >= 0) {
-        styles.fontWeight = 'bold';
-      }
-      return (
-        <div
-          role="menu"
-          key={key}
-          tabIndex={0}
-          onClick={() => selectValue(option)}
-          onKeyDown={e => e.keyCode === 13 && selectValue(option)}
-          onMouseEnter={() => focusOption(option)}
-          style={Object.assign(styles, style)}
-        >
-          <div style={{ flex: '1 1 auto' }}>
-            {option[labelKey]}
-          </div>
-          <Preview value={option[valueKey]} />
-        </div>
-      );
-    },
-
-    renderValue({ label, value }) {
-      return (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            margin: '0 1.5rem 0 0.5rem',
-          }}
-        >
-          <div>
-            {label}
-          </div>
-          <Preview value={value} />
-        </div>
-      );
     },
 
     render() {
@@ -125,26 +66,46 @@ export default function (icons) {
         setActiveStyle,
         setInactiveStyle,
         classNameWrapper,
+        onChange,
       } = this.props;
+      const { iconList } = this.state;
       const currentValue = value || field.get('default');
-
+      const pageSize = 10;
+      const cux = iconList.indexOf(currentValue);
       return (
         <div
           id={forID}
           className={classNameWrapper}
           onBlur={setInactiveStyle}
           onFocus={setActiveStyle}
+          style={{ overflow: 'auto' }}
         >
-          <VirtualizedSelect
-            clearable={false}
-            options={Object.values(icons).map(i => ({
-              label: i.iconName,
-              value: `${i.prefix} ${i.iconName}`,
-            }))}
-            value={currentValue}
-            optionRenderer={this.renderLabel}
-            valueRenderer={this.renderValue}
-            onChange={this.handleChange}
+          <ReactList
+            axis="x"
+            useStaticSize
+            initialIndex={cux - (pageSize / 2 - 1)}
+            pageSize={pageSize}
+            length={iconList.length}
+            type="uniform"
+            itemRenderer={(x, key) => {
+              const color = cux === x ? '#1976D2' : '#3F51B5';
+
+              return (
+                <i
+                  key={key}
+                  role="button"
+                  tabIndex={0}
+                  title={iconList[x]}
+                  onKeyDown={e => e.keyCode === 13 && onChange(e.target.textContent)}
+                  onClick={e => onChange(e.currentTarget.title)}
+                  style={{
+                    cursor: 'pointer', color, fontSize: 50, padding: 8,
+                  }}
+                >
+                  <Preview value={iconList[x]} />
+                </i>
+              );
+            }}
           />
         </div>
       );
