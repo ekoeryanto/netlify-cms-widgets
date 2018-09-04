@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import ReactList from '@pake/react-list/esm/react-list.min';
 import icons from 'material-design-icon-list/data/list.json';
+import MaterialIcon from './MaterialIcon';
 
 export default createReactClass({
   propTypes: {
@@ -18,18 +19,33 @@ export default createReactClass({
     }).isRequired,
   },
 
+  getInitialState() {
+    return {
+      choose: false,
+    };
+  },
+
   getDdefaultProps() {
     return { value: '' };
   },
 
   render() {
     const {
-      forID, field, value, setActiveStyle, setInactiveStyle, classNameWrapper, onChange,
+      forID,
+      field,
+      value,
+      setActiveStyle,
+      setInactiveStyle,
+      classNameWrapper,
+      onChange,
     } = this.props;
     const currentValue = value || field.get('default');
 
     const pageSize = 10;
-    const cux = icons.indexOf(currentValue);
+    const currenIndex = icons.indexOf(currentValue);
+
+    const { choose } = this.state;
+
     return (
       <div
         id={forID}
@@ -38,33 +54,32 @@ export default createReactClass({
         onFocus={setActiveStyle}
         style={{ overflow: 'auto' }}
       >
-        <ReactList
-          useStaticSize
-          axis="x"
-          initialIndex={cux - (pageSize / 2 - 1)}
-          pageSize={pageSize}
-          length={icons.length}
-          type="uniform"
-          itemRenderer={(x, key) => {
-            const color = cux === x ? '#1976D2' : '#3F51B5';
-            return (
-              <i
-                role="button"
-                title={icons[x].replace(/_/g, ' ').toUpperCase()}
+        {choose ? (
+          <ReactList
+            useStaticSize
+            axis="x"
+            initialIndex={currenIndex}
+            pageSize={pageSize}
+            length={icons.length}
+            type="uniform"
+            itemRenderer={(x, key) => (
+              <MaterialIcon
+                icon={icons[x]}
+                color={currenIndex === x ? '#1976D2' : '#3F51B5'}
                 onKeyDown={e => e.keyCode === 13 && onChange(e.target.textContent)}
                 tabIndex={0}
                 key={key}
-                className="material-icons"
-                style={{
-                  cursor: 'pointer', color, fontSize: 62, width: 62, height: 62,
-                }}
                 onClick={e => onChange(e.target.textContent)}
-              >
-                {icons[x]}
-              </i>
-            );
-          }}
-        />
+              />
+            )}
+          />
+        ) : (
+          <MaterialIcon
+            icon={currentValue}
+            onClick={() => this.setState({ choose: true })}
+            onKeyDown={e => e.keyCode === 13 && this.setState({ choose: true })}
+          />
+        )}
       </div>
     );
   },

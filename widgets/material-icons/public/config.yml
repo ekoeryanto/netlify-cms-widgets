@@ -6,11 +6,15 @@ collections:
 - name: example
   label: Example
   files:
-  - file: _data/material-icons.yml
-    name: material-icons-widget
-    label: Material Icons Widget
+  - name: material-icons
+    label: Material Icons
+    file: _data/material-icons.json
     fields:
-    - name: material-icons
-      label: Material Icons
-      widget: material-icons
-      default: delete
+      - name: icon
+        label: Icon
+        widget: material-icons
+      - name: iconlist
+        label: Icon List
+        widget: list
+        fields:
+          - {name: icon, label: Icon, widget: material-icons}
