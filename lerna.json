@@ -13,11 +13,6 @@
       "Internal": ":house: Internal"
     }
   },
-  "packages": [
-    "widgets/*",
-    "demo/*",
-    "core/*"
-  ],
   "version": "independent",
   "npmClient": "yarn",
   "loglevel": "success",
