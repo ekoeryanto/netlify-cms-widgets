@@ -32,13 +32,6 @@ export default createReactClass({
   getInitialState() {
     return {
       displayColorPicker: false,
-      color: {
-        r: '255',
-        g: '255',
-        b: '255',
-        a: '1',
-      },
-      hex: DEFAULT_COLOR,
     };
   },
 
@@ -53,7 +46,6 @@ export default createReactClass({
 
       selected = `${type}(${value})`;
     }
-    this.setState({ color: color.rgb, hex: color.hex });
     onChange(selected);
   },
 
@@ -86,13 +78,13 @@ export default createReactClass({
       props.presetColors = field.get('presets').toArray();
     }
 
-    const { color, hex, displayColorPicker } = this.state;
+    const { displayColorPicker } = this.state;
     const styles = {
       color: {
         width: '30px',
         height: '30px',
         borderRadius: '50%',
-        background: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
+        background: props.color,
         float: 'left',
         marginRight: '10px',
       },
@@ -100,7 +92,6 @@ export default createReactClass({
         minWidth: '120px',
         padding: '8px',
         background: '#ffffff',
-        boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
         display: 'inline-block',
         cursor: 'pointer',
         borderRadius: '25px',
@@ -123,20 +114,17 @@ export default createReactClass({
       },
     };
 
-    styles.color.boxShadow = hex === DEFAULT_COLOR ? '0 0 0 1px rgba(0,0,0,.1)' : 'none';
-
     return (
       <div
         id={forID}
         className={classNameWrapper}
         onFocus={setActiveStyle}
         onBlur={setInactiveStyle}
-        style={{ borderColor: value }}
       >
         <button style={styles.swatch} onClick={this.handleClick} type="button">
           <div style={styles.color} />
           <span style={styles.hex}>
-            {hex}
+            {props.color}
           </span>
         </button>
         {displayColorPicker
@@ -144,7 +132,6 @@ export default createReactClass({
             <div style={styles.popover}>
               <div tabIndex={0} role="button" style={styles.cover} onClick={this.handleClose} onKeyPress={this.handleClose} />
               <SketchPicker
-                color={color}
                 onChangeComplete={this.handleChangeComplete}
                 {...props}
               />

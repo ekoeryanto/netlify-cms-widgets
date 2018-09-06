@@ -8,10 +8,11 @@ collections:
   editor:
     preview: false
   files:
-  - file: _data/color.yml
+  - file: _data/color.json
     name: color-widget
     label: Color Widget
     fields:
     - name: color
       label: Color
       widget: color
+      default: "#ff0"
