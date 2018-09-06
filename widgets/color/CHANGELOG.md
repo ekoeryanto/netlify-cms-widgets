@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-color@3.0.0...netlify-cms-widget-color@3.0.1) (2018-09-06)
+
+
+### Bug Fixes
+
+* **color:** initial value not applied ([8676bb9](https://github.com/ekoeryanto/netlify-cms-widgets/commit/8676bb9))
+
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-color@2.3.0...netlify-cms-widget-color@3.0.0) (2018-08-10)
 
