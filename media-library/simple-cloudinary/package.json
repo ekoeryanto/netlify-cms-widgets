@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-simple-cloudinary",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Cloudinary Media Library for Netlify CMS.",
   "main": "dist/main.js",
   "files": [
