@@ -1,5 +1,5 @@
 {
-  "name": "netlify-cms-media-library-simple-cloudinary",
+  "name": "netlify-cms-simple-cloudinary",
   "version": "0.0.0",
   "description": "Cloudinary Media Library for Netlify CMS.",
   "main": "dist/main.js",
@@ -17,14 +17,14 @@
     "netlify",
     "netlify-cms",
     "cms",
-    "widget",
-    "color"
+    "media-library",
+    "cloudinay"
   ],
   "author": "Eko Eryanto <ekoeryanto@gmail.com>",
   "bugs": {
     "url": "https://github.com/ekoeryanto/netlify-cms-widgets/issues"
   },
-  "homepage": "https://github.com/ekoeryanto/netlify-cms-widgets/tree/master/widgets/color#readme",
+  "homepage": "https://github.com/ekoeryanto/netlify-cms-widgets/tree/master/media-library/simple-cloudinary#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/ekoeryanto/netlify-cms-widgets.git"
