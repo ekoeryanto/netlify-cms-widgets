@@ -1,0 +1,26 @@
+backend:
+  name: test-repo
+  login: false
+media_folder: assets
+media_library:
+  name: simple-cloudinary
+  config:
+    cloud_name: apek
+    api_key: '579987246275824'
+collections:
+- name: example
+  label: Example
+  editor:
+    preview: true
+  files:
+  - file: _data/color.json
+    name: color-widget
+    label: Color Widget
+    fields:
+    - name: color
+      label: Color
+      widget: image
+      options:
+        media_library:
+          config:
+            multiple: false

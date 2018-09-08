@@ -1,0 +1,53 @@
+{
+  "name": "netlify-cms-media-library-simple-cloudinary",
+  "version": "0.0.0",
+  "description": "Cloudinary Media Library for Netlify CMS.",
+  "main": "dist/main.js",
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "webpack --mode=development",
+    "prebuild": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "netlify",
+    "netlify-cms",
+    "cms",
+    "widget",
+    "color"
+  ],
+  "author": "Eko Eryanto <ekoeryanto@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ekoeryanto/netlify-cms-widgets/issues"
+  },
+  "homepage": "https://github.com/ekoeryanto/netlify-cms-widgets/tree/master/widgets/color#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekoeryanto/netlify-cms-widgets.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "cloudinary": "^1.11.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "create-react-class": "^15.6.3",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "netlify-cms": "^2.0.0",
+    "prop-types": "^15.6.1",
+    "react-immutable-proptypes": "^2.1.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-serve": "^2.0.2"
+  }
+}

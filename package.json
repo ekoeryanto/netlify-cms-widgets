@@ -47,6 +47,7 @@
   ],
   "workspaces": [
     "widgets/*",
+    "media-library/*",
     "demo/*",
     "core/*"
   ]
