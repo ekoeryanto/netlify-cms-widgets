@@ -1,4 +1,6 @@
-import CMS from 'netlify-cms';
 import cloudinary from './library';
 
-CMS.registerMediaLibrary(cloudinary);
+import('netlify-cms')
+  .then(({ default: CMS }) => {
+    CMS.registerMediaLibrary(cloudinary);
+  });

@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SERVE = process.env.WEBPACK_SERVE;
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: SERVE ? './src/index.js' : './src/library.js',
   },
@@ -17,6 +17,7 @@ module.exports = {
   devtool: SERVE ? 'inline-source-map' : 'source-map',
   externals: {
     cloudinary: 'cloudinary',
+    'netlify-cms': 'CMS',
   },
   module: {
     rules: [
@@ -31,6 +32,7 @@ module.exports = {
               ['@babel/preset-env', { modules: false }],
               '@babel/preset-react',
             ],
+            plugins: ['@babel/plugin-syntax-dynamic-import'],
           },
         }],
       },
