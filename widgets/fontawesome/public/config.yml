@@ -13,12 +13,14 @@ collections:
     - name: fontawesome-solid
       label: Fontawesome Solid Widget
       widget: fontawesome-solid
-      default: fas allergies
+      type: object
     - name: fontawesome-brands
       label: Fontawesome Brands Widget
       widget: fontawesome-brands
-      default: fab amilia
+      type: string
+      default: fab facebook
     - name: fontawesome-regular
       label: Fontawesome Regular Widget
+      type: array
       widget: fontawesome-regular
-      default: far bell
+      default: [far, bell]

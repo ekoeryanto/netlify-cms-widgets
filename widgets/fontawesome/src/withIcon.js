@@ -4,6 +4,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import ReactList from '@pake/react-list/esm/react-list.min';
+
 import Preview from './Preview';
 
 export default function (icons) {
@@ -54,7 +55,7 @@ widget.
 
     getInitialState() {
       return {
-        iconList: Object.values(icons).map(i => `${i.prefix} ${i.iconName}`),
+        iconLibrary: Object.values(icons),
       };
     },
 
@@ -68,10 +69,35 @@ widget.
         classNameWrapper,
         onChange,
       } = this.props;
-      const { iconList } = this.state;
-      const currentValue = value || field.get('default');
+
+      const { iconLibrary } = this.state;
+
       const pageSize = 10;
-      const cux = iconList.indexOf(currentValue);
+
+      const valueType = field.get('type', 'string');
+      let cux = 0;
+      let currentValue = value || field.get('default');
+
+      // normalize current value
+      if (currentValue) {
+        if (typeof currentValue === 'string') {
+          currentValue = currentValue.split(' ');
+        } else if (currentValue.toJS) {
+          // expect object or array
+          currentValue = currentValue.toJS();
+        }
+
+        if (Array.isArray(currentValue)) {
+          currentValue = { prefix: currentValue[0], iconName: currentValue[1] };
+        }
+
+        cux = iconLibrary.findIndex(
+          l => l.prefix === currentValue.prefix && l.iconName === currentValue.iconName,
+        );
+      } else {
+        currentValue = iconLibrary[cux];
+      }
+
       return (
         <div
           id={forID}
@@ -85,7 +111,7 @@ widget.
             useStaticSize
             initialIndex={cux - (pageSize / 2 - 1)}
             pageSize={pageSize}
-            length={iconList.length}
+            length={iconLibrary.length}
             type="uniform"
             itemRenderer={(x, key) => {
               const color = cux === x ? '#1976D2' : '#3F51B5';
@@ -95,14 +121,30 @@ widget.
                   key={key}
                   role="button"
                   tabIndex={0}
-                  title={iconList[x]}
-                  onKeyDown={e => e.keyCode === 13 && onChange(e.target.textContent)}
-                  onClick={e => onChange(e.currentTarget.title)}
+                  title={iconLibrary[x].iconName}
+                  onKeyDown={e => e}
+                  onClick={() => {
+                    let selected;
+                    switch (valueType) {
+                      case 'object':
+                        selected = iconLibrary[x];
+                        break;
+                      case 'array':
+                        selected = [iconLibrary[x].prefix, iconLibrary[x].iconName];
+                        break;
+                      case 'string':
+                      default:
+                        selected = `${iconLibrary[x].prefix} ${iconLibrary[x].iconName}`;
+                        break;
+                    }
+
+                    onChange(selected);
+                  }}
                   style={{
                     cursor: 'pointer', color, fontSize: 50, padding: 8,
                   }}
                 >
-                  <Preview value={iconList[x]} />
+                  <Preview value={iconLibrary[x]} />
                 </i>
               );
             }}
