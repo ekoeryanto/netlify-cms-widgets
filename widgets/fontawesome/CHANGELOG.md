@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@3.0.0...netlify-cms-widget-fontawesome@3.1.0) (2018-09-24)
+
+
+### Features
+
+* **fontawesome:** support array and object return value ([2154fb5](https://github.com/ekoeryanto/netlify-cms-widgets/commit/2154fb5))
+
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/ekoeryanto/netlify-cms-widgets/compare/netlify-cms-widget-fontawesome@2.1.0...netlify-cms-widget-fontawesome@3.0.0) (2018-09-03)
 
