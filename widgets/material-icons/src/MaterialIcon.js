@@ -5,7 +5,7 @@ const MaterialIcon = (props) => {
   const {
     icon, color, onClick, onKeyDown,
   } = props;
-  return (
+  return icon ? (
     <i
       onClick={onClick}
       onKeyDown={onKeyDown}
@@ -23,7 +23,7 @@ const MaterialIcon = (props) => {
     >
       {icon}
     </i>
-  );
+  ) : '';
 };
 
 MaterialIcon.propTypes = {
