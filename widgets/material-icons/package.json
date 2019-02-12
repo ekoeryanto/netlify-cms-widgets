@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@pake/react-list": "^1.0.0",
-    "material-design-icon-list": "^3.0.3",
+    "material-design-icon-list": "^4.0.1",
     "rollup-plugin-json": "^3.0.0"
   }
 }

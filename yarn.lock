@@ -7046,10 +7046,10 @@ material-colors@^1.2.1:
   resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
   integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
-material-design-icon-list@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/material-design-icon-list/-/material-design-icon-list-3.0.3.tgz#42f7ff3924ad9fb8637909be67489879021e1766"
-  integrity sha512-MuGUzKNHuYR51MXs6KFb9yYJKTuhCfH2NoAMTMUsTjoNTAcgzdcsF7tQbES/oiJZ9lILAHTdJXj+MhnJQd5vNA==
+material-design-icon-list@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/material-design-icon-list/-/material-design-icon-list-4.0.1.tgz#50456899bb69a9079740e74618206fca1ba7bfcd"
+  integrity sha512-jAsi+7vryxsZmDwwOhubD8m4ZYKwpgP7xjx8IZgkUeRiyKPf58kYxQmc3VqeSYeBTZmWTExfpm3bz2MYOu1fFQ==
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -10581,7 +10581,7 @@ rollup-plugin-strip@^1.1.1:
     magic-string "^0.25.1"
     rollup-pluginutils "^2.3.3"
 
-rollup-plugin-terser@3.0.0:
+rollup-plugin-terser@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-3.0.0.tgz#045bd7cf625ee1affcfe6971dab6fffe6fb48c65"
   integrity sha512-Ed9zRD7OoCBnh0XGlEAJle5TCUsFXMLClwKzZWnS1zbNO4MelHjfCSdFZxCAdH70M40nhZ1nRrY2GZQJhSMcjA==
@@ -10599,10 +10599,10 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.0, rollup-pluginutils@^2.3.1,
     estree-walker "^0.5.2"
     micromatch "^2.3.11"
 
-rollup@0.66.4:
-  version "0.66.4"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.66.4.tgz#8067b9638af82873b7fd644af9c3d72108ca4bab"
-  integrity sha512-oV6dzR2zDYVOMUmrM1XMTW0NlZqKeZANAWH+A7BwCfE+mAfJ6xRkYbrM3qAossgyMxPN9aFBu8kRXf5HYB5gvw==
+rollup@^0.66.4:
+  version "0.66.6"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.66.6.tgz#ce7d6185beb7acea644ce220c25e71ae03275482"
+  integrity sha512-J7/SWanrcb83vfIHqa8+aVVGzy457GcjA6GVZEnD0x2u4OnOd0Q1pCrEoNe8yLwM6z6LZP02zBT2uW0yh5TqOw==
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "*"
